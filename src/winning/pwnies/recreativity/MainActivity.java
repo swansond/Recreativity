@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
+// pwnies are totes awesome
 public class MainActivity extends Activity {
 
     @Override
