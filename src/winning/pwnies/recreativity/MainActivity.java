@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.view.Menu;
 
 // pwnies are totes awesome
+// Also, David is amazing.
 public class MainActivity extends Activity {
 
     @Override
