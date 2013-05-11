@@ -41,17 +41,4 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-<<<<<<< HEAD
 </LinearLayout><!-- </RelativeLayout> -->
-=======
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="152dp"
-        android:layout_toRightOf="@+id/textView1" >
-    </GridLayout>
-
-</RelativeLayout>
->>>>>>> 75a17cce3b648a3cb953110506384b6a8a500fba
