@@ -2,16 +2,19 @@ package winning.pwnies.recreativity;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 
 // pwnies are totes awesome
-// Also, David is amazing.
-public class MainActivity extends Activity {
+// Also, Avid is amazing.
+public class ExploreActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_explore);
+
     }
 
 
@@ -22,4 +25,13 @@ public class MainActivity extends Activity {
         return true;
     }
     
-}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    	switch(item.getItemId()) {
+    	case R.id.menu_play:
+    		Intent i = new Intent(getApplicationContext(), TabActivity.class);
+    		startActivity(i);
+    	}
+    	return true;
+    }
+} 
