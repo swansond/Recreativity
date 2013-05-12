@@ -1,21 +1,17 @@
 package winning.pwnies.recreativity;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author David Swanson
  *
  */
 public class DefaultUser implements User {
-	private final Set<Integer> starred;
 	private final List<Submission> submissions;
 	private int receivedStars;
 	
 	public DefaultUser() {
-		starred = new HashSet<Integer>();
 		submissions = new ArrayList<Submission>();
 	}
 
@@ -33,8 +29,20 @@ public class DefaultUser implements User {
 	 */
 	@Override
 	public int numStars() {
-		// TODO Auto-generated method stub
-		return 0;
+		return receivedStars;
+	}
+
+	@Override
+	public void addStar() {
+		receivedStars++;
+	}
+
+	@Override
+	public void removeStar() {
+		receivedStars--;
+		if (receivedStars < 0) {
+			receivedStars = 0;	
+		}
 	}
 
 }

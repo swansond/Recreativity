@@ -6,42 +6,13 @@ public interface Flow {
 	 * @param sub the new submission to be added
 	 */
 	public void addItem(Submission sub);
-	
+
 	/**
-	 * Returns the submission at the current index.
-	 * Defaults to the keyframe, but can be moved
-	 * @return the submission currently focused on
+	 * Gets the submission at the given index
+	 * @param index the index of the requested submission
+	 * @return the submission at the provided index
 	 */
-	public Submission getCurrent();
-	
-	/**
-	 * Moves the current focus to the next (right, more recent) element.
-	 */
-	public void next();
-	
-	/**
-	 * Returns the next (right, more recent) element without moving the focus
-	 * @return the next submission in the flow
-	 */
-	public Submission getNext();
-	
-	/**
-	 * Moves the current focus to the previous (left, less recent) element.
-	 */
-	public void prev();
-	
-	/**
-	 * Returns the previous (left, less recent) element without moving the focus
-	 * @return the previous submission in the flow
-	 */
-	public Submission getPrev();
-	
-	/**
-	 * Moves the current focus to the element at the provided index
-	 * @param index the index to move the focus to
-	 */
-	// TODO This will be used for implementing the slider functionality
-	public void moveTo(int index);
+	public Submission get(int index);
 	
 	/**
 	 * Returns the index of the keyframe, the most important (highest rated?)
@@ -50,5 +21,13 @@ public interface Flow {
 	 */
 	// TODO Potentially find a better name for this?
 	public int keyframe();
+	
+	public int size();
+	
+	/**
+	 * Returns a FlowView object for this flow
+	 * @return FlowView for this flow.
+	 */
+	public FlowView getView();
 	
 }

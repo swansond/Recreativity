@@ -3,58 +3,37 @@ package winning.pwnies.recreativity;
 import java.util.List;
 
 public class BasicFlow implements Flow {
-	// TODO Implement this class
 	private List<Submission> items;
-	private int index;
-	private int currentKey;
+	// private int key -- the cached keyFrame?
 	
 	
 	@Override
 	public void addItem(Submission sub) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Submission getCurrent() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void next() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Submission getNext() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void prev() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Submission getPrev() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void moveTo(int index) {
-		// TODO Auto-generated method stub
-
+		int size = items.size();
+		items.add(sub);
+		sub.setFlow(this, size);
 	}
 
 	@Override
 	public int keyframe() {
-		// TODO Auto-generated method stub
+		// TODO Scan the list and return the highest rated entry.
+		// Alternatively, cache the highest rated entry and recalculate sometimes
 		return 0;
+	}
+
+	@Override
+	public Submission get(int index) {
+		return items.get(index);
+	}
+
+	@Override
+	public FlowView getView() {
+		return new FlowView(this);
+	}
+
+	@Override
+	public int size() {
+		return items.size();
 	}
 
 }

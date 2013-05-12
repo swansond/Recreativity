@@ -18,4 +18,14 @@ public interface User {
 	 * @return number of stars received by user
 	 */
 	public int numStars();
+
+	/**
+	 * Adds a star for this user
+	 */
+	public void addStar();
+	
+	/**
+	 * Removes a star for this user
+	 */
+	public void removeStar();
 }

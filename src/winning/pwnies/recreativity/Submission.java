@@ -13,20 +13,20 @@ public interface Submission {
 	 * Adds a comment to this entry
 	 * @param in the comment to be added
 	 */
+	// TODO delete comments
 	public void addComment(Comment in);
 	
 	/**
-	 * Adds a star to this entry
+	 * Add or remove a star for this entry
 	 * @param name the user attempting to star this submission
-	 * @return false if the user already starred submission, true otherwise
 	 */
-	public boolean star(User name);
+	public void toggleStar(User name);
 	
 	/**
 	 * Gets the list of comments for this submission
 	 * @return list of comments associated with this submission
 	 */
-	public List<Comment> getComments(); // TODO figure out how to change comments 
+	public List<Comment> viewComments(); 
 	
 	/**
 	 * Gets the number of stars this submission has received
@@ -46,5 +46,38 @@ public interface Submission {
 	 */
 	public User getAuthor();
 	
-	// TODO add a get flow method?
+	/**
+	 * Returns whether there is another submission after this one
+	 * @return true if there is another submission, false otherwise
+	 */
+	public boolean hasNext();
+	
+	/**
+	 * Returns whether there is another submission before this one
+	 * @return true if there is another submission, false otherwise
+	 */
+	public boolean hasPrev();
+	
+	/**
+	 * Gets the next submission in the flow
+	 * @return the submission after this submission
+	 * @throws NoSuchElementException if hasNext is false
+	 */
+	public Submission next();
+	
+	/**
+	 * Gets the previous submission in the flow
+	 * @return the submission immediately preceding this submission
+	 * @throws NoSuchElementException if hasNext is false
+	 */
+	public Submission prev();
+	
+	/**
+	 * Sets this submission's place in a flow
+	 * Only call this method once per submission
+	 * @param f The flow this submission is being added to
+	 * @param i The index of this submission in the destination flow
+	 */
+	public void setFlow(Flow f, int i);
+	
 }
