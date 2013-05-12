@@ -1,6 +1,8 @@
 package winning.pwnies.recreativity;
 
-public interface Flow {
+import android.os.Parcelable;
+
+public interface Flow extends Parcelable {
 	/**
 	 * Adds an item to the end of the flow
 	 * @param sub the new submission to be added

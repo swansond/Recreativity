@@ -1,5 +1,7 @@
 package winning.pwnies.recreativity;
 
-public interface Comment {
+import android.os.Parcelable;
+
+public interface Comment extends Parcelable {
 
 }

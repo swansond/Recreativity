@@ -2,6 +2,9 @@ package winning.pwnies.recreativity;
 
 import java.util.List;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class BasicFlow implements Flow {
 	private List<Submission> items;
 	// private int key -- the cached keyFrame?
@@ -34,6 +37,18 @@ public class BasicFlow implements Flow {
 	@Override
 	public int size() {
 		return items.size();
+	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

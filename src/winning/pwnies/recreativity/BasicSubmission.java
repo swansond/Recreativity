@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
+import android.os.Parcel;
+
 /**
  * @author David Swanson
  *
@@ -112,6 +114,18 @@ public class BasicSubmission implements Submission {
 	@Override
 	public boolean hasPrev() {
 		return index > 0;
+	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

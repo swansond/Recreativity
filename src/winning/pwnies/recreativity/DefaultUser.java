@@ -3,6 +3,8 @@ package winning.pwnies.recreativity;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.os.Parcel;
+
 /**
  * @author David Swanson
  *
@@ -43,6 +45,18 @@ public class DefaultUser implements User {
 		if (receivedStars < 0) {
 			receivedStars = 0;	
 		}
+	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -1,12 +1,14 @@
 package winning.pwnies.recreativity;
 
 import java.util.List;
+
+import android.os.Parcelable;
 /**
  * Represents a user of the application
  * @author David Swanson
  *
  */
-public interface User {
+public interface User extends Parcelable {
 	/**
 	 * Gets the Submissions that this user has submitted.
 	 * @return a list of the submissions authored by this user

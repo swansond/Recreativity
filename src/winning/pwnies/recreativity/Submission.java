@@ -2,12 +2,14 @@ package winning.pwnies.recreativity;
 
 import java.util.List;
 
+import android.os.Parcelable;
+
 /**
  * Represents an individual entry in a flow.
  * @author David Swanson
  *
  */
-public interface Submission {
+public interface Submission extends Parcelable {
 	
 	/**
 	 * Adds a comment to this entry
