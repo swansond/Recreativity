@@ -24,6 +24,10 @@ public interface Flow extends Parcelable {
 	// TODO Potentially find a better name for this?
 	public int keyframe();
 	
+	/**
+	 * The number of elements in this flow
+	 * @return the numbe of elements in the flow
+	 */
 	public int size();
 	
 	/**

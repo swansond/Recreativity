@@ -9,6 +9,9 @@ public class BasicFlow implements Flow {
 	private List<Submission> items;
 	// private int key -- the cached keyFrame?
 	
+	public BasicFlow(Parcel in) {
+		in.readList(items, Submission.class.getClassLoader());
+	}
 	
 	@Override
 	public void addItem(Submission sub) {
@@ -41,14 +44,22 @@ public class BasicFlow implements Flow {
 
 	@Override
 	public int describeContents() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
-		// TODO Auto-generated method stub
-		
+		dest.writeList(items);
 	}
 
+	public static final Parcelable.Creator<BasicFlow> CREATOR = new Parcelable.Creator<BasicFlow>() {
+		public BasicFlow createFromParcel(Parcel in) {
+			return new BasicFlow(in);
+		}
+		
+		public BasicFlow[] newArray(int size) {
+			return new BasicFlow[size];
+		}
+	};
+	
 }

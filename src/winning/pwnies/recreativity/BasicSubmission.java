@@ -8,13 +8,14 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 
 import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * @author David Swanson
  *
  */
 public class BasicSubmission implements Submission {
-	private final List<Comment> comments;
+	private List<Comment> comments;
 	private final Set<User> starred;
 	private int stars;
 	private final int id;
@@ -30,6 +31,21 @@ public class BasicSubmission implements Submission {
 		author = a;
 		comments = new ArrayList<Comment>();
 		starred = new HashSet<User>();
+	}
+	
+	public BasicSubmission(Parcel in) {
+		stars = in.readInt();
+		id = in.readInt();
+		author = in.readParcelable(User.class.getClassLoader());
+		entry = in.readParcelable(Content.class.getClassLoader());
+		flow = in.readParcelable(Flow.class.getClassLoader());
+		index = in.readInt();
+		int size = in.readInt();
+		starred = new HashSet<User>();
+		for (int i = 0; i < size; i++) {
+			starred.add((User)in.readParcelable(User.class.getClassLoader()));
+		}
+		in.readList(comments, Comment.class.getClassLoader());
 	}
 	
 	public void setFlow(Flow f, int i) {
@@ -118,15 +134,32 @@ public class BasicSubmission implements Submission {
 
 	@Override
 	public int describeContents() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
-		// TODO Auto-generated method stub
-		
+		dest.writeInt(stars);
+		dest.writeInt(id);
+		dest.writeParcelable(author, 0);
+		dest.writeParcelable(entry, 0);
+		dest.writeParcelable(flow, 0);
+		dest.writeInt(index);
+		dest.writeInt(starred.size());
+		for (User u : starred) {
+			dest.writeParcelable(u, 0);
+		}
+		dest.writeList(comments);
 	}
 
+	public static final Parcelable.Creator<BasicSubmission> CREATOR = new Parcelable.Creator<BasicSubmission>() {
+		public BasicSubmission createFromParcel(Parcel in) {
+			return new BasicSubmission(in);
+		}
+		
+		public BasicSubmission[] newArray(int size) {
+			return new BasicSubmission[size];
+		}
+	};
 
 }

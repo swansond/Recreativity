@@ -1,6 +1,7 @@
 package winning.pwnies.recreativity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import android.os.Parcel;
@@ -10,11 +11,16 @@ import android.os.Parcel;
  *
  */
 public class DefaultUser implements User {
-	private final List<Submission> submissions;
+	private List<Submission> submissions;
 	private int receivedStars;
 	
 	public DefaultUser() {
 		submissions = new ArrayList<Submission>();
+	}
+	
+	public DefaultUser(Parcel in) {
+		receivedStars = in.readInt();
+		in.readList(submissions, Submission.class.getClassLoader());
 	}
 
 	/* (non-Javadoc)
@@ -22,8 +28,7 @@ public class DefaultUser implements User {
 	 */
 	@Override
 	public List<Submission> submissions() {
-		// TODO Auto-generated method stub
-		return null;
+		return Collections.unmodifiableList(submissions);
 	}
 
 	/* (non-Javadoc)
@@ -49,14 +54,13 @@ public class DefaultUser implements User {
 
 	@Override
 	public int describeContents() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
-		// TODO Auto-generated method stub
-		
+		dest.writeInt(receivedStars);
+		dest.writeList(submissions);
 	}
 
 }
