@@ -1,18 +1,34 @@
 package winning.pwnies.recreativity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * 
+ * @author David Swanson
+ *
+ */
 public class BasicFlow implements Flow {
+	private static int currentSerial = 1;
+	
 	private List<Submission> items;
+	private int serial;
 	// private int key -- the cached keyFrame?
 	
 	public BasicFlow(Parcel in) {
+		serial = in.readInt();
 		in.readList(items, Submission.class.getClassLoader());
 	}
 	
+	public BasicFlow() {
+		items = new ArrayList<Submission>();
+		serial = currentSerial++;
+		Data.addFlow(serial, this);
+	}
+
 	@Override
 	public void addItem(Submission sub) {
 		int size = items.size();
@@ -49,6 +65,7 @@ public class BasicFlow implements Flow {
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeInt(serial);
 		dest.writeList(items);
 	}
 
@@ -61,5 +78,10 @@ public class BasicFlow implements Flow {
 			return new BasicFlow[size];
 		}
 	};
+
+	@Override
+	public int serialNumber() {
+		return serial;
+	}
 	
 }

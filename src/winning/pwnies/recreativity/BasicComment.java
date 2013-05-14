@@ -8,16 +8,21 @@ import android.os.Parcelable;
  *
  */
 public class BasicComment implements Comment {
+	private static int currentSerial = 1;
+	
 	private String text;
 	private User author;
+	private int serial;
 	
 	public BasicComment(String text, User author) {
 		this.text = text;
 		this.author = author;
+		serial = currentSerial++;
 	}
 	
 	public BasicComment(Parcel in) {
 		text = in.readString();
+		serial = in.readInt();
 		author = in.readParcelable(User.class.getClassLoader());
 	}
 	
@@ -41,4 +46,9 @@ public class BasicComment implements Comment {
 			return new BasicComment[size];
 		}
 	};
+
+	@Override
+	public int serialNumber() {
+		return serial;
+	}
 }

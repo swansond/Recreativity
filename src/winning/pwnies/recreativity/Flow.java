@@ -36,4 +36,10 @@ public interface Flow extends Parcelable {
 	 */
 	public FlowView getView();
 	
+	/**
+	 * The secret serial number for this flow
+	 * @return the number for this flow.
+	 */
+	public int serialNumber();
+	
 }
