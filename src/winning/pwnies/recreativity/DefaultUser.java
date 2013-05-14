@@ -5,21 +5,28 @@ import java.util.Collections;
 import java.util.List;
 
 import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * @author David Swanson
  *
  */
 public class DefaultUser implements User {
+	private static int currentSerial = 1;
+	
 	private List<Submission> submissions;
 	private int receivedStars;
+	private int serial;
 	
 	public DefaultUser() {
 		submissions = new ArrayList<Submission>();
+		serial = currentSerial++;
+		Data.addUser(serial, this);
 	}
 	
 	public DefaultUser(Parcel in) {
 		receivedStars = in.readInt();
+		serial = in.readInt();
 		in.readList(submissions, Submission.class.getClassLoader());
 	}
 
@@ -60,7 +67,23 @@ public class DefaultUser implements User {
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeInt(receivedStars);
+		dest.writeInt(serial);
 		dest.writeList(submissions);
 	}
 
+	@Override
+	public int serialNumber() {
+		return serial;
+	}
+
+	public static final Parcelable.Creator<DefaultUser> CREATOR = new Parcelable.Creator<DefaultUser>() {
+		public DefaultUser createFromParcel(Parcel in) {
+			return new DefaultUser(in);
+		}
+		
+		public DefaultUser[] newArray(int size) {
+			return new DefaultUser[size];
+		}
+	};
+	
 }

@@ -11,6 +11,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is the Explore Screen" />
+        android:text="@string/this_is_the_explore_screen" />
 
 </RelativeLayout>

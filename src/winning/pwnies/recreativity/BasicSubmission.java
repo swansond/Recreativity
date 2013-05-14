@@ -15,7 +15,7 @@ import android.os.Parcelable;
  *
  */
 public class BasicSubmission implements Submission {
-	private List<Comment> comments;
+	private final List<Comment> comments;
 	private final Set<User> starred;
 	private int stars;
 	private final int id;
@@ -23,7 +23,6 @@ public class BasicSubmission implements Submission {
 	private final Content entry;
 	private Flow flow;
 	private int index;
-	
 	
 	public BasicSubmission(Content c, User a) {
 		id = 0;
@@ -36,16 +35,20 @@ public class BasicSubmission implements Submission {
 	public BasicSubmission(Parcel in) {
 		stars = in.readInt();
 		id = in.readInt();
-		author = in.readParcelable(User.class.getClassLoader());
+		author = Data.getUser(in.readInt());
 		entry = in.readParcelable(Content.class.getClassLoader());
-		flow = in.readParcelable(Flow.class.getClassLoader());
+		flow = Data.getFlow(in.readInt());
 		index = in.readInt();
 		int size = in.readInt();
 		starred = new HashSet<User>();
 		for (int i = 0; i < size; i++) {
-			starred.add((User)in.readParcelable(User.class.getClassLoader()));
+			starred.add(Data.getUser(in.readInt()));
 		}
-		in.readList(comments, Comment.class.getClassLoader());
+		comments = new ArrayList<Comment>();
+		size = in.readInt();
+		for (int i = 0; i < size; i++) {
+			comments.add(Data.getComment(in.readInt()));
+		}
 	}
 	
 	public void setFlow(Flow f, int i) {
@@ -141,15 +144,18 @@ public class BasicSubmission implements Submission {
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeInt(stars);
 		dest.writeInt(id);
-		dest.writeParcelable(author, 0);
+		dest.writeInt(author.serialNumber());
 		dest.writeParcelable(entry, 0);
-		dest.writeParcelable(flow, 0);
+		dest.writeInt(flow.serialNumber());
 		dest.writeInt(index);
 		dest.writeInt(starred.size());
 		for (User u : starred) {
-			dest.writeParcelable(u, 0);
+			dest.writeInt(u.serialNumber());
 		}
-		dest.writeList(comments);
+		dest.writeInt(comments.size());
+		for (Comment c : comments) {
+			dest.writeInt(c.serialNumber());
+		}
 	}
 
 	public static final Parcelable.Creator<BasicSubmission> CREATOR = new Parcelable.Creator<BasicSubmission>() {

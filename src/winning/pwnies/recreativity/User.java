@@ -30,4 +30,10 @@ public interface User extends Parcelable {
 	 * Removes a star for this user
 	 */
 	public void removeStar();
+	
+	/**
+	 * Returns the serial number for this user.
+	 * @return the user id for this user
+	 */
+	public int serialNumber();
 }

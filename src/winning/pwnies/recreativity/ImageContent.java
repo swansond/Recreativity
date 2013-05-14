@@ -3,6 +3,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Parcel;
+import android.os.Parcelable;
 
 
 public class ImageContent implements Content {
@@ -29,10 +30,18 @@ public class ImageContent implements Content {
 
 	@Override
 	public void draw(Canvas canvas) {
-		canvas.drawBitmap(image, 0, 0, new Paint());
+		canvas.drawBitmap(image, canvas.getWidth() / 2 - image.getWidth() / 2, canvas.getHeight() / 2 - image.getHeight() / 2, new Paint());
 	}
 
-
+	public static final Parcelable.Creator<ImageContent> CREATOR = new Parcelable.Creator<ImageContent>() {
+		public ImageContent createFromParcel(Parcel in) {
+			return new ImageContent(in);
+		}
+		
+		public ImageContent[] newArray(int size) {
+			return new ImageContent[size];
+		}
+	};
 
 }
 

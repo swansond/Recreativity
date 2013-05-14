@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 
-// pwnies are totes awesome
-// Also, Avid is amazing.
 public class ExploreActivity extends Activity {
 
     @Override
