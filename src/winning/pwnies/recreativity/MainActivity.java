@@ -2,6 +2,7 @@ package winning.pwnies.recreativity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -16,9 +17,11 @@ public class MainActivity extends Activity {
 	private Comment com;
 	private Content c2;
 	private Submission s2;
-	private DefaultUser u3;
-	private TextContent c3;
-	private BasicSubmission s3;
+	private User u3;
+	private Content c3;
+	private Submission s3;
+	private Content c4;
+	private Submission s4;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,9 @@ public class MainActivity extends Activity {
 		c3 = new TextContent("Th-th-th-that's all folks!");
 		s3 = new BasicSubmission(c3, u3);
 		f.addItem(s3);
+		c4 = new ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+		s4 = new BasicSubmission(c4, u);
+		f.addItem(s4);
         setContentView(R.layout.activity_main);
     }
 
