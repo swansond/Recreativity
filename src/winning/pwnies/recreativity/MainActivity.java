@@ -32,8 +32,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         // Populate with initial data
         u = new DefaultUser();
+        Data.addUser(u.serialNumber(), u);
 		u2 = new DefaultUser();
+		Data.addUser(u2.serialNumber(), u2);
 		f = new BasicFlow();
+		Data.addFlow(f.serialNumber(), f);
 		c = new TextContent("It's a wonderful world");
 		s = new BasicSubmission(c, u);
 		f.addItem(s);
@@ -43,6 +46,7 @@ public class MainActivity extends Activity {
 		s2 = new BasicSubmission(c2, u2);
 		f.addItem(s2);
 		u3 = new DefaultUser();
+		Data.addUser(u3.serialNumber(), u3);
 		c3 = new TextContent("Th-th-th-that's all folks!");
 		s3 = new BasicSubmission(c3, u3);
 		f.addItem(s3);
@@ -70,5 +74,9 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(this, ViewSubmissionActivity.class);
 		intent.putExtra("submission", s);
 		startActivity(intent);
+	}
+	
+	public void goToMainAppPage(View view) {
+		startActivity(new Intent(this, TabActivity.class));
 	}
 } 

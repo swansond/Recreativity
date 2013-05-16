@@ -35,6 +35,14 @@ public class FlowView {
 	}
 	
 	public Submission current() {
-		return flow.get(current);
+		return getAt(current);
+	}
+	
+	public Submission[] view() {
+		Submission[] arr = new Submission[3];
+		arr[1] = current();
+		arr[0] = arr[1].hasPrev() ? arr[1].prev() : null;
+		arr[2] = arr[1].hasNext() ? arr[1].next() : null;
+		return arr;
 	}
 }

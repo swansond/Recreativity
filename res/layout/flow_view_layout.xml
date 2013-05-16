@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <winning.pwnies.recreativity.ContentView
+        android:id="@+id/contentViewLeft"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".3" />
+
+    <winning.pwnies.recreativity.ContentView
+        android:id="@+id/contentViewMiddle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".4" />
+
+    <winning.pwnies.recreativity.ContentView
+        android:id="@+id/contentViewRight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".3" />
+
+</LinearLayout>

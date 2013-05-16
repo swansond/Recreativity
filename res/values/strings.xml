@@ -11,6 +11,7 @@
     <string name="this_is_the_explore_screen">This is the Explore Screen</string>
     <string name="title_activity_view_submission">ViewSubmissionActivity</string>
     <string name="button_awesome">Go to an individual submission</string>
+    <string name="button_awesomest">Go to the main page</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 

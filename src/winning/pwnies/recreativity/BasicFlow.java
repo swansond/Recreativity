@@ -26,7 +26,6 @@ public class BasicFlow implements Flow {
 	public BasicFlow() {
 		items = new ArrayList<Submission>();
 		serial = currentSerial++;
-		Data.addFlow(serial, this);
 	}
 
 	@Override

@@ -15,7 +15,6 @@ public interface Submission extends Parcelable {
 	 * Adds a comment to this entry
 	 * @param in the comment to be added
 	 */
-	// TODO delete comments
 	public void addComment(Comment in);
 	
 	/**

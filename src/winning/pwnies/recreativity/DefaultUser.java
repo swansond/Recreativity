@@ -21,7 +21,6 @@ public class DefaultUser implements User {
 	public DefaultUser() {
 		submissions = new ArrayList<Submission>();
 		serial = currentSerial++;
-		Data.addUser(serial, this);
 	}
 	
 	public DefaultUser(Parcel in) {

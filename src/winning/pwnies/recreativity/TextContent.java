@@ -48,5 +48,4 @@ public class TextContent implements Content {
 			return new TextContent[size];
 		}
 	};
-	
 }
