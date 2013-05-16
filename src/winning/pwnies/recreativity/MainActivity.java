@@ -22,6 +22,10 @@ public class MainActivity extends Activity {
 	private Submission s3;
 	private Content c4;
 	private Submission s4;
+	private Content c5;
+	private BasicSubmission s5;
+	private ImageContent c6;
+	private BasicSubmission s6;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +46,15 @@ public class MainActivity extends Activity {
 		c3 = new TextContent("Th-th-th-that's all folks!");
 		s3 = new BasicSubmission(c3, u3);
 		f.addItem(s3);
-		c4 = new ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+		c4 = new TextContent("Fourth string");//ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic0));
 		s4 = new BasicSubmission(c4, u);
 		f.addItem(s4);
+		c5 = new ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic1));
+		s5 = new BasicSubmission(c5, u);
+		f.addItem(s5);
+		c6 = new ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic2));
+		s6 = new BasicSubmission(c6, u);
+		f.addItem(s6);
         setContentView(R.layout.activity_main);
     }
 
