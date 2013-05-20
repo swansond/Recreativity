@@ -5,15 +5,20 @@ import java.util.Collection;
 import java.util.List;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 public class Explore extends Fragment {
 	private List<FlowView> views;
+	private Button viewFlowButton;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -22,14 +27,14 @@ public class Explore extends Fragment {
 		views = new ArrayList<FlowView>();
 		for (Flow f : col) {
 			views.add(new FlowView(f));
-		}
+		}		
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View myFragmentView = inflater.inflate(R.layout.explore_layout, container, false);
-		LinearLayout ll = (LinearLayout)myFragmentView.findViewById(R.id.flowlistview);
+		RelativeLayout ll = (RelativeLayout)myFragmentView.findViewById(R.id.flowlistview);
 		int i = 0;
 		for (FlowView f : views) {
 			View itemView = inflater.inflate(R.layout.flow_view_layout, ll);
@@ -49,7 +54,12 @@ public class Explore extends Fragment {
 		}
 		return myFragmentView;
 	}
-
+	
+//	public void goToFlow(View view) {
+//		startActivity(new Intent(this, TabActivity.class));
+//	}
 }
+	
+
 
 
