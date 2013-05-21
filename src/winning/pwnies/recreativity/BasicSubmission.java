@@ -169,4 +169,9 @@ public class BasicSubmission implements Submission {
 		}
 	};
 
+	@Override
+	public int index() {
+		return flow == null ? -1 : index;
+	}
+
 }

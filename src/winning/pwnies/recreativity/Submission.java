@@ -74,6 +74,12 @@ public interface Submission extends Parcelable {
 	public Submission prev();
 	
 	/**
+	 * Gets the index of the submission
+	 * @return index of current submission in its flow, or -1 if not in a flow
+	 */
+	public int index();
+	
+	/**
 	 * Sets this submission's place in a flow
 	 * Only call this method once per submission
 	 * @param f The flow this submission is being added to

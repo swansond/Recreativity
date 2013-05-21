@@ -14,5 +14,6 @@
     <string name="button_awesomest">Go to the main page</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="starinstructions">Click here to star this submission</string>
 
 </resources>
