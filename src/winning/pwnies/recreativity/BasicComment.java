@@ -14,7 +14,13 @@ public class BasicComment implements Comment {
 	private User author;
 	private int serial;
 	
-	public BasicComment(String text, User author) {
+	public static BasicComment newBasicComment(String text, User author) {
+		BasicComment out = new BasicComment(text, author);
+		Data.addComment(out.serial, out);
+		return out;
+	}
+	
+	private BasicComment(String text, User author) {
 		this.text = text;
 		this.author = author;
 		serial = currentSerial++;

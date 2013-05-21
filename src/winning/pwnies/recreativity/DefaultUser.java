@@ -18,7 +18,13 @@ public class DefaultUser implements User {
 	private int receivedStars;
 	private int serial;
 	
-	public DefaultUser() {
+	public static DefaultUser newDefaultUser() {
+		DefaultUser out = new DefaultUser();
+		Data.addUser(out.serial, out);
+		return out;
+	}
+	
+	private DefaultUser() {
 		submissions = new ArrayList<Submission>();
 		serial = currentSerial++;
 	}

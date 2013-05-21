@@ -43,21 +43,21 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Populate with initial data
-        u = new DefaultUser();
+        u = DefaultUser.newDefaultUser();
         Data.addUser(u.serialNumber(), u);
-		u2 = new DefaultUser();
+		u2 = DefaultUser.newDefaultUser();
 		Data.addUser(u2.serialNumber(), u2);
-		f = new BasicFlow();
+		f = BasicFlow.newBasicFlow();
 		Data.addFlow(f.serialNumber(), f);
 		c = new TextContent("It's a wonderful world");
 		s = new BasicSubmission(c, u);
 		f.addItem(s);
-		com = new BasicComment("This is sad", u2);
+		com = BasicComment.newBasicComment("This is sad", u2);
 		s.addComment(com);
 		c2 = new TextContent("It's a beautiful morning");
 		s2 = new BasicSubmission(c2, u2);
 		f.addItem(s2);
-		u3 = new DefaultUser();
+		u3 = DefaultUser.newDefaultUser();
 		Data.addUser(u3.serialNumber(), u3);
 		c3 = new TextContent("Th-th-th-that's all folks!");
 		s3 = new BasicSubmission(c3, u3);
@@ -121,11 +121,6 @@ public class MainActivity extends Activity {
 		intent.putExtra(Data.FLOW, f.serialNumber());
 		startActivity(intent);
 	}
-	
-	public void goToMainAppPage(View view) {
-		startActivity(new Intent(this, TabActivity.class));
-	}
-	
 	
 	// from: http://developer.android.com/training/displaying-bitmaps/load-bitmap.html
 	public static int calculateInSampleSize(

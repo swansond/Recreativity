@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.List;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -92,6 +91,7 @@ public class ExploreActivity extends Activity {
 			goToFlow(flow, submission);
 		}
 	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);

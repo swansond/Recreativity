@@ -38,7 +38,7 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content" 
 	    android:orientation="vertical"
-	    android:visibility="invisible">
+	    android:visibility="invisible">"
 
 			    
 	    <EditText
@@ -47,12 +47,12 @@
 	        android:layout_height="75dp" />
 
 		<EditText
-		    android:id="@+id/response2"
+		    android:id="@+id/response"
 		    android:layout_width="fill_parent"
 		    android:layout_height="75dp"
 		    android:ems="10" >
 
-		    <requestFocus />
+		    
 		</EditText>
 	    
 	    <LinearLayout 
@@ -60,6 +60,12 @@
 			android:layout_height="wrap_content"
 			android:orientation="horizontal" >
 			
+	        <Button
+	            android:id="@+id/backToPrompt"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Back to Prompt" />
+	        
 	        <Button
 		        android:id="@+id/submit"
 		        android:layout_width="wrap_content"

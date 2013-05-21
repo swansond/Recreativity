@@ -23,7 +23,13 @@ public class BasicFlow implements Flow {
 		in.readList(items, Submission.class.getClassLoader());
 	}
 	
-	public BasicFlow() {
+	public static BasicFlow newBasicFlow() {
+		BasicFlow out = new BasicFlow();
+		Data.addFlow(out.serial, out);
+		return out;
+	}
+	
+	private BasicFlow() {
 		items = new ArrayList<Submission>();
 		serial = currentSerial++;
 	}

@@ -13,13 +13,13 @@
         android:allowBackup="true"
         android:icon="@drawable/recreativity_logo_small"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo"
-        android:uiOptions="splitActionBarWhenNarrow" >
+        android:theme="@android:style/Theme.Holo" >
         <activity
             android:name="winning.pwnies.recreativity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
