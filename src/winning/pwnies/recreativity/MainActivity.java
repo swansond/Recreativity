@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
 		Data.addUser(u2.serialNumber(), u2);
 		f = new BasicFlow();
 		Data.addFlow(f.serialNumber(), f);
-		c = new TextContent("It's a wonderful world");
+		c = new TextContent("It's a wonderful world!");
 		s = new BasicSubmission(c, u);
 		f.addItem(s);
 		com = new BasicComment("This is sad", u2);
