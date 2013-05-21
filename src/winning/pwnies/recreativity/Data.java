@@ -5,12 +5,70 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.content.Context;
+import android.graphics.BitmapFactory;
+
 public class Data {
 
 	public static final String SUBMISSION = "submission";
 	private static Map<Integer, Flow> flows = new HashMap<Integer, Flow>();
 	private static Map<Integer, Comment> comments = new HashMap<Integer, Comment>();
 	private static Map<Integer, User> users = new HashMap<Integer, User>();
+	
+	static {
+        User u = new DefaultUser();
+        Data.addUser(u.serialNumber(), u);
+		User u2 = new DefaultUser();
+		Data.addUser(u2.serialNumber(), u2);
+		Flow f = new BasicFlow();
+		Data.addFlow(f.serialNumber(), f);
+		Content c = new TextContent("It's a wonderful world");
+		Submission s = new BasicSubmission(c, u);
+		f.addItem(s);
+		Comment com = new BasicComment("This is sad", u2);
+		s.addComment(com);
+		Content c2 = new TextContent("It's a beautiful morning");
+		Submission s2 = new BasicSubmission(c2, u2);
+		f.addItem(s2);
+		User u3 = new DefaultUser();
+		Data.addUser(u3.serialNumber(), u3);
+		Content c3 = new TextContent("Th-th-th-that's all folks!");
+		Submission s3 = new BasicSubmission(c3, u3);
+		f.addItem(s3);
+		Content c4 = new TextContent("Bugs Bunny really likes to eat carrots");//ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic0));
+		Submission s4 = new BasicSubmission(c4, u);
+		f.addItem(s4);
+		Content c5 = new ImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.pic1));
+		Submission s5 = new BasicSubmission(c5, u);
+		f.addItem(s5);
+		Content c6 = new ImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.pic2));
+				// This is how large images should be called, if the code from the android developer site worked...
+				// http://developer.android.com/training/displaying-bitmaps/load-bitmap.html
+				//new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic2, 300, 500));
+		Submission s6 = new BasicSubmission(c6, u);
+		f.addItem(s6);
+		Content c8 = new TextContent("There once was a really beautiful flower in a meadow");
+		Submission s8 = new BasicSubmission(c8, u);
+		f.addItem(s8);
+        
+		Flow f2 = new BasicFlow();
+		Data.addFlow(f2.serialNumber(), f2);
+		addImageToFlow(f2, u3, R.drawable.pic4);
+		addImageToFlow(f2, u, R.drawable.pic6);
+		addImageToFlow(f2, u2, R.drawable.pic5);
+		
+		Flow f3 = new BasicFlow();
+		Data.addFlow(f3.serialNumber(), f3);
+		addImageToFlow(f3, u, R.drawable.image2);
+		addImageToFlow(f3, u2, R.drawable.image4);
+		addImageToFlow(f3, u3, R.drawable.image3);
+				
+		Flow f4 = new BasicFlow();
+		Data.addFlow(f4.serialNumber(), f4);
+		addImageToFlow(f4, u2, R.drawable.pic2);
+		addImageToFlow(f4, u3, R.drawable.pic4);
+		addImageToFlow(f4, u, R.drawable.pic3);
+	}
 	
 	
 	public static void addFlow(int serial, Flow flow) {
@@ -49,4 +107,10 @@ public class Data {
 		users.clear();
 		users = null;
 	}
+
+    private static void addImageToFlow(Flow flow, User user, int image) {
+		Content pic = new ImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), image));
+		Submission sub = new BasicSubmission(pic, user);
+		flow.addItem(sub);
+    }
 }

@@ -50,12 +50,34 @@ public class Explore extends Fragment {
 			}
 			Log.e("counter", Integer.toString(++i));
 		}
+		
+		View pic4 = myFragmentView.findViewById(R.id.imageView4);
+		pic4.setOnClickListener(new SubmissionListener(3, 0));
 		return myFragmentView;
 	}
 	
-//	public void goToFlow(View view) {
-//		startActivity(new Intent(this, TabActivity.class));
-//	}
+	public void goToFlow(int flow, int submission) {
+		Intent intent = new Intent(getActivity(), ViewSubmissionActivity.class);
+		intent.putExtra("flow", flow);
+		intent.putExtra("submissionIndex", submission);
+		startActivity(intent);
+	}
+	
+	private class SubmissionListener implements View.OnClickListener {
+		private final int flow;
+		private final int submission;
+		
+		public SubmissionListener(int flow, int submission) {
+			this.flow = flow;
+			this.submission = submission;
+		}
+		
+		public void onClick(View v) {
+			Flow f = Data.getFlow(flow);
+			Log.d("Explore", f.serialNumber() + "");
+			goToFlow(flow, submission);
+		}
+	}
 }
 	
 
