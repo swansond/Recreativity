@@ -33,7 +33,7 @@ public class Explore extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View myFragmentView = inflater.inflate(R.layout.explore_layout, container, false);
-		RelativeLayout ll = (RelativeLayout)myFragmentView.findViewById(R.id.flowlistview);
+		ViewGroup ll = (ViewGroup) myFragmentView.findViewById(R.id.flowlistview);
 		int i = 0;
 		for (FlowDisplay f : views) {
 			View itemView = inflater.inflate(R.layout.flow_view_layout, ll);
@@ -51,9 +51,30 @@ public class Explore extends Fragment {
 			}
 			Log.e("counter", Integer.toString(++i));
 		}
+		// first flow
+		View pic1 = myFragmentView.findViewById(R.id.imageView1);
+		pic1.setOnClickListener(new SubmissionListener(2, 0));
+		View pic2 = myFragmentView.findViewById(R.id.imageView2);
+		pic2.setOnClickListener(new SubmissionListener(2, 1));
+		View pic3 = myFragmentView.findViewById(R.id.imageView3);
+		pic3.setOnClickListener(new SubmissionListener(2, 2));
 		
+		// second flow
 		View pic4 = myFragmentView.findViewById(R.id.imageView4);
 		pic4.setOnClickListener(new SubmissionListener(3, 0));
+		View pic6 = myFragmentView.findViewById(R.id.imageView6);
+		pic6.setOnClickListener(new SubmissionListener(3, 1));
+		View pic5 = myFragmentView.findViewById(R.id.imageView5);
+		pic5.setOnClickListener(new SubmissionListener(3, 2));
+		
+		// third flow
+		View pic7 = myFragmentView.findViewById(R.id.imageView7);
+		pic7.setOnClickListener(new SubmissionListener(4, 0));
+		View pic9 = myFragmentView.findViewById(R.id.imageView9);
+		pic9.setOnClickListener(new SubmissionListener(4, 1));
+		View pic8 = myFragmentView.findViewById(R.id.imageView8);
+		pic8.setOnClickListener(new SubmissionListener(4, 2));
+		
 		return myFragmentView;
 	}
 	
