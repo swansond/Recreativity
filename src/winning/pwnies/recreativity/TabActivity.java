@@ -35,7 +35,6 @@ public class TabActivity extends Activity {
             int savedIndex = savedInstanceState.getInt("SAVED_INDEX");
             getActionBar().setSelectedNavigationItem(savedIndex);
         }
-        
     }
 
 	@Override

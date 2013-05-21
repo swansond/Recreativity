@@ -85,6 +85,7 @@ public class MainActivity extends Activity {
 //		c10 = new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic4, 300, 500));
 //		s10 = new BasicSubmission(c10, u);
 //		f.addItem(s7);
+		
         setContentView(R.layout.activity_main);
     }
 

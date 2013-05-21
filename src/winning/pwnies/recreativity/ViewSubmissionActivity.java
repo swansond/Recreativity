@@ -23,6 +23,7 @@ public class ViewSubmissionActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.view_submission);
 		Intent intent = getIntent();
+
 		Bundle b = intent.getExtras();
 		int flowID = b.getInt(FLOW);
 		int submissionNumber = b.getInt(SUBMISSION);
