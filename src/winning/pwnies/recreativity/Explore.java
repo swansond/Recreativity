@@ -5,28 +5,26 @@ import java.util.Collection;
 import java.util.List;
 
 import android.app.Fragment;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 public class Explore extends Fragment {
-	private List<FlowView> views;
+	private List<FlowDisplay> views;
+	@SuppressWarnings("unused")
 	private Button viewFlowButton;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Collection<Flow> col = Data.getAllFlows();
-		views = new ArrayList<FlowView>();
+		views = new ArrayList<FlowDisplay>();
 		for (Flow f : col) {
-			views.add(new FlowView(f));
+			views.add(new FlowDisplay(f));
 		}		
 	}
 
@@ -36,7 +34,7 @@ public class Explore extends Fragment {
 		View myFragmentView = inflater.inflate(R.layout.explore_layout, container, false);
 		RelativeLayout ll = (RelativeLayout)myFragmentView.findViewById(R.id.flowlistview);
 		int i = 0;
-		for (FlowView f : views) {
+		for (FlowDisplay f : views) {
 			View itemView = inflater.inflate(R.layout.flow_view_layout, ll);
 			
 			ContentView left = (ContentView) itemView.findViewById(R.id.contentViewLeft);

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
+@SuppressWarnings("unused")
 public class MainActivity extends Activity {
 
 	private User u;
@@ -97,7 +98,8 @@ public class MainActivity extends Activity {
 	
 	public void viewSubmission(View view) {
 		Intent intent = new Intent(this, ViewSubmissionActivity.class);
-		intent.putExtra("submission", s);
+		intent.putExtra(ViewSubmissionActivity.SUBMISSION, f.keyframe());
+		intent.putExtra(ViewSubmissionActivity.FLOW, f.serialNumber());
 		startActivity(intent);
 	}
 	

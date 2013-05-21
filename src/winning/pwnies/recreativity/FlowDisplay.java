@@ -1,10 +1,10 @@
 package winning.pwnies.recreativity;
 
-public class FlowView {
+public class FlowDisplay {
 	private Flow flow;
 	private int current;
 	
-	public FlowView(Flow f) {
+	public FlowDisplay(Flow f) {
 		flow = f;
 		current = flow.keyframe();
 	}

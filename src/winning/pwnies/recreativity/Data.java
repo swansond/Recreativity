@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class Data {
 
+	public static final String SUBMISSION = "submission";
 	private static Map<Integer, Flow> flows = new HashMap<Integer, Flow>();
 	private static Map<Integer, Comment> comments = new HashMap<Integer, Comment>();
 	private static Map<Integer, User> users = new HashMap<Integer, User>();
@@ -38,5 +39,14 @@ public class Data {
 
 	public static Collection<Flow> getAllFlows() {
 		return Collections.unmodifiableCollection(flows.values());
+	}
+	
+	public static void dump() {
+		flows.clear();
+		flows = null;
+		comments.clear();
+		comments = null;
+		users.clear();
+		users = null;
 	}
 }

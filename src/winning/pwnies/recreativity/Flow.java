@@ -26,7 +26,7 @@ public interface Flow extends Parcelable {
 	
 	/**
 	 * The number of elements in this flow
-	 * @return the numbe of elements in the flow
+	 * @return the number of elements in the flow
 	 */
 	public int size();
 	
@@ -34,12 +34,12 @@ public interface Flow extends Parcelable {
 	 * Returns a FlowView object for this flow
 	 * @return FlowView for this flow.
 	 */
-	public FlowView getView();
+	public FlowDisplay display();
 	
 	/**
 	 * The secret serial number for this flow
 	 * @return the number for this flow.
 	 */
 	public int serialNumber();
-	
+
 }

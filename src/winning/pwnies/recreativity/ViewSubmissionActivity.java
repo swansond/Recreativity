@@ -1,42 +1,29 @@
 package winning.pwnies.recreativity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 
-public class ViewSubmissionActivity extends Activity {
-
-	private Submission submission;
+public class ViewSubmissionActivity extends FragmentActivity {
+	public static final String SUBMISSION = "submission";
+	public static final String FLOW = "flow";
+	
+	SubmissionPagerAdapter pagerAdapter;
+	ViewPager pager;
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_view_submission);
+		setContentView(R.layout.view_submission);
 		Intent intent = getIntent();
-		submission = intent.getParcelableExtra("submission");
+		Bundle b = intent.getExtras();
+		int flowID = b.getInt(FLOW);
+		int submissionNumber = b.getInt(SUBMISSION);
 		
-		ContentView contentView = (ContentView) findViewById(R.id.contentView);
-		if (submission == null) {
-			System.err.println("WHAT THE IS GOING ON HERE?");
-		}
-		contentView.setContent(submission.getContent());
+		pagerAdapter = new SubmissionPagerAdapter(getSupportFragmentManager(), Data.getFlow(flowID));
+		pager = (ViewPager) findViewById(R.id.submission_pager);
+		pager.setAdapter(pagerAdapter);
+		pager.setCurrentItem(submissionNumber);
 	}
-	
-	public void viewNext(View view) {
-		if (submission.hasNext()) {
-			Intent intent = new Intent(this, ViewSubmissionActivity.class);
-			intent.putExtra("submission", submission.next());
-			startActivity(intent);
-		}
-	}
-	
-	public void viewPrev(View view) {
-		if (submission.hasPrev()) {
-			Intent intent = new Intent(this, ViewSubmissionActivity.class);
-			intent.putExtra("submission", submission.prev());
-			startActivity(intent);
-		}
-	}
-
 }

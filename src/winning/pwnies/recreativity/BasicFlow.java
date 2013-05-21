@@ -48,8 +48,8 @@ public class BasicFlow implements Flow {
 	}
 
 	@Override
-	public FlowView getView() {
-		return new FlowView(this);
+	public FlowDisplay display() {
+		return new FlowDisplay(this);
 	}
 
 	@Override

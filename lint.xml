@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="ParcelCreator">
+        <ignore path="src/winning/pwnies/recreativity/Flow.java" />
+        <ignore path="src/winning/pwnies/recreativity/Submission.java" />
+    </issue>
     <issue id="UseSparseArrays">
         <ignore path="src/winning/pwnies/recreativity/Data.java" />
     </issue>
