@@ -12,7 +12,7 @@ public class Prompt extends Fragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.play_layout, container, false);
+		return inflater.inflate(R.layout.activity_play, container, false);
 	}
 	
 }

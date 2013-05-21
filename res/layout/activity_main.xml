@@ -9,16 +9,9 @@
     tools:context=".TabActivity" >
     
     <Button 
-        android:id="@+id/buttbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_awesome" 
-        android:onClick="viewSubmission"/>
-    <Button 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_awesomest" 
-       	android:layout_below="@+id/buttbutton"
         android:onClick="goToMainAppPage"/>
 
 </RelativeLayout>

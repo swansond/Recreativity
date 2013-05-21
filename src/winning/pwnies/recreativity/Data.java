@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 
 public class Data {
@@ -114,4 +116,19 @@ public class Data {
 		Submission sub = new BasicSubmission(pic, user);
 		flow.addItem(sub);
     }
+    
+	public static void goToExplore(Context context) {
+		Intent intent = new Intent(context, ExploreActivity.class);
+		context.startActivity(intent);
+	}
+	
+	public static void goToProfile(Context context) {
+		Intent intent = new Intent(context, ProfileActivity.class);
+		context.startActivity(intent);
+	}
+	
+	public static void goToPlay(Context context) {
+		Intent intent = new Intent(context, PlayActivity.class);
+		context.startActivity(intent);
+	}
 }

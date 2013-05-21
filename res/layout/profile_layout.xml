@@ -7,6 +7,12 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="Profile page and features not yet implemented" />
+   <Button 
+        android:id="@+id/buttbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_awesome" 
+        android:onClick="viewSubmission"/>
    <ImageView
        android:layout_width="match_parent"
        android:layout_height="match_parent"

@@ -4,7 +4,7 @@
         android:layout_height="wrap_content" >
 
 
-	
+    
 	<LinearLayout
 	    android:id="@+id/prompt_fragment"
 	    android:layout_width="fill_parent"
@@ -37,12 +37,23 @@
 	    android:id="@+id/compose_fragment"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content" 
-	    android:orientation="vertical">
+	    android:orientation="vertical"
+	    android:visibility="invisible">
+
 			    
 	    <EditText
 	        android:id="@+id/response"
 	        android:layout_width="fill_parent"
 	        android:layout_height="75dp" />
+
+		<EditText
+		    android:id="@+id/response2"
+		    android:layout_width="fill_parent"
+		    android:layout_height="75dp"
+		    android:ems="10" >
+
+		    <requestFocus />
+		</EditText>
 	    
 	    <LinearLayout 
 	        android:layout_width="wrap_content"

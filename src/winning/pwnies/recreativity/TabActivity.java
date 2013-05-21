@@ -12,29 +12,30 @@ public class TabActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+        /*
         final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         
         Tab tabA = actionBar.newTab();
         tabA.setText("Play");
-        tabA.setTabListener(new TabListener<Play>(this, "Play", Play.class));
+        tabA.setTabListener(new TabListener<PlayActivity>(this, "Play", PlayActivity.class));
         actionBar.addTab(tabA);
         
         Tab tabB = actionBar.newTab();
         tabB.setText("Profile");
-        tabB.setTabListener(new TabListener<Profile>(this, "Profile", Profile.class));
+        tabB.setTabListener(new TabListener<ProfileActivity>(this, "Profile", ProfileActivity.class));
         actionBar.addTab(tabB);
         
         Tab tabC = actionBar.newTab();
         tabC.setText("Explore");
-        tabC.setTabListener(new TabListener<Explore>(this, "Explore", Explore.class));
+        tabC.setTabListener(new TabListener<ExploreActivity>(this, "Explore", ExploreActivity.class));
         actionBar.addTab(tabC);
         
         if (savedInstanceState != null) {
             int savedIndex = savedInstanceState.getInt("SAVED_INDEX");
             getActionBar().setSelectedNavigationItem(savedIndex);
         }
+        */
     }
 
 	@Override
