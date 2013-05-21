@@ -5,12 +5,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import android.content.Context;
 import android.graphics.BitmapFactory;
 
 public class Data {
 
 	public static final String SUBMISSION = "submission";
+	public static final String ARG_OBJECT = "object";
+	public static final String FLOW = "flow";
 	private static Map<Integer, Flow> flows = new HashMap<Integer, Flow>();
 	private static Map<Integer, Comment> comments = new HashMap<Integer, Comment>();
 	private static Map<Integer, User> users = new HashMap<Integer, User>();

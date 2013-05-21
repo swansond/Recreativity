@@ -99,8 +99,8 @@ public class MainActivity extends Activity {
 	
 	public void viewSubmission(View view) {
 		Intent intent = new Intent(this, ViewSubmissionActivity.class);
-		intent.putExtra(ViewSubmissionActivity.SUBMISSION, f.keyframe());
-		intent.putExtra(ViewSubmissionActivity.FLOW, f.serialNumber());
+		intent.putExtra(Data.SUBMISSION, f.keyframe());
+		intent.putExtra(Data.FLOW, f.serialNumber());
 		startActivity(intent);
 	}
 	

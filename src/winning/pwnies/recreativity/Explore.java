@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -58,8 +59,8 @@ public class Explore extends Fragment {
 	
 	public void goToFlow(int flow, int submission) {
 		Intent intent = new Intent(getActivity(), ViewSubmissionActivity.class);
-		intent.putExtra("flow", flow);
-		intent.putExtra("submissionIndex", submission);
+		intent.putExtra(Data.FLOW, flow);
+		intent.putExtra(Data.SUBMISSION, submission);
 		startActivity(intent);
 	}
 	

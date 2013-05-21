@@ -6,8 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
 public class ViewSubmissionActivity extends FragmentActivity {
-	public static final String SUBMISSION = "submission";
-	public static final String FLOW = "flow";
+	
 	
 	SubmissionPagerAdapter pagerAdapter;
 	ViewPager pager;
@@ -19,8 +18,8 @@ public class ViewSubmissionActivity extends FragmentActivity {
 		Intent intent = getIntent();
 
 		Bundle b = intent.getExtras();
-		int flowID = b.getInt(FLOW);
-		int submissionNumber = b.getInt(SUBMISSION);
+		int flowID = b.getInt(Data.FLOW);
+		int submissionNumber = b.getInt(Data.SUBMISSION);
 		
 		pagerAdapter = new SubmissionPagerAdapter(getSupportFragmentManager(), Data.getFlow(flowID));
 		pager = (ViewPager) findViewById(R.id.submission_pager);

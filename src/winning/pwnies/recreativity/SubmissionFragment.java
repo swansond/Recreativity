@@ -9,12 +9,12 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 public class SubmissionFragment extends Fragment {
-	public static final String ARG_OBJECT = "object";
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		Bundle args = getArguments();
-		final Submission submission = args.getParcelable(ARG_OBJECT);
+		final Submission submission = args.getParcelable(Data.ARG_OBJECT);
 
 		LinearLayout casing = (LinearLayout) inflater.inflate(R.layout.content_layout, container, false);
 		final ImageButton starButton = (ImageButton) casing.findViewById(R.id.starButton);
