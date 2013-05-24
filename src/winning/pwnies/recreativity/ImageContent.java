@@ -9,10 +9,19 @@ import android.os.Parcelable;
 
 public class ImageContent implements Content {
 
+	private static int currentSerial = 1;
 	private Bitmap image;
+	private int serial;
 	
-	public ImageContent(Bitmap in) {
+	private ImageContent(Bitmap in) {
 		image = in;
+		serial = currentSerial++;
+	}
+	
+	public static ImageContent createImageContent(Bitmap in) {
+		ImageContent out = new ImageContent(in);
+		Data.addContent(out.serial, out);
+		return out;
 	}
 	
 	public ImageContent(Parcel in) {
@@ -52,6 +61,11 @@ public class ImageContent implements Content {
 			return new ImageContent[size];
 		}
 	};
+
+	@Override
+	public int serialNumber() {
+		return serial;
+	}
 
 }
 

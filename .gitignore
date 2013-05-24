@@ -2,4 +2,4 @@ gen/*
 *.class
 bin/*
 .settings
-
+release.keystore

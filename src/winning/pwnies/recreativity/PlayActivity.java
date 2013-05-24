@@ -68,9 +68,9 @@ public class PlayActivity extends Activity implements OnClickListener {
 				// gets the text the user entered, not sure what to do with it
 				EditText mEdit   = (EditText)findViewById(R.id.response); 
 				String text = mEdit.getText().toString();
-				Data.getFlow(1).addItem(new BasicSubmission(new TextContent(text), Data.getUser(1)));
+				Data.getFlow(1).addItem(new BasicSubmission(TextContent.createTextContent(text), Data.getUser(1)));
 				Intent intent = new Intent(getBaseContext(), ViewSubmissionActivity.class);
-				intent.putExtra(Data.SUBMISSION, Data.getFlow(1).keyframe());
+				intent.putExtra(Data.SUBMISSION, Data.getFlow(1).size() - 1);
 				intent.putExtra(Data.FLOW, Data.getFlow(1).serialNumber());
 				startActivity(intent);
 			}

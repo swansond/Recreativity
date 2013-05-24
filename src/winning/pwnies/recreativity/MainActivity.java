@@ -49,43 +49,34 @@ public class MainActivity extends Activity {
 		Data.addUser(u2.serialNumber(), u2);
 		f = BasicFlow.newBasicFlow();
 		Data.addFlow(f.serialNumber(), f);
-		c = new TextContent("It's a wonderful world");
+		c = TextContent.createTextContent("It's a wonderful world");
 		s = new BasicSubmission(c, u);
 		f.addItem(s);
 		com = BasicComment.newBasicComment("This is sad", u2);
 		s.addComment(com);
-		c2 = new TextContent("It's a beautiful morning");
+		c2 = TextContent.createTextContent("It's a beautiful morning");
 		s2 = new BasicSubmission(c2, u2);
 		f.addItem(s2);
 		u3 = DefaultUser.newDefaultUser();
 		Data.addUser(u3.serialNumber(), u3);
-		c3 = new TextContent("Th-th-th-that's all folks!");
+		c3 = TextContent.createTextContent("Th-th-th-that's all folks!");
 		s3 = new BasicSubmission(c3, u3);
 		f.addItem(s3);
-		c4 = new TextContent("Bugs Bunny really likes to eat carrots");//ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic0));
+		c4 = TextContent.createTextContent("Bugs Bunny really likes to eat carrots");//ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic0));
 		s4 = new BasicSubmission(c4, u);
 		f.addItem(s4);
-		c5 = new ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic1));
+		c5 = ImageContent.createImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic1));
 		s5 = new BasicSubmission(c5, u);
 		f.addItem(s5);
-		c6 = new ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic2));
+		c6 = ImageContent.createImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic2));
 				// This is how large images should be called, if the code from the android developer site worked...
 				// http://developer.android.com/training/displaying-bitmaps/load-bitmap.html
 				//new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic2, 300, 500));
 		s6 = new BasicSubmission(c6, u);
 		f.addItem(s6);
-		c8 = new TextContent("There once was a really beautiful flower in a meadow");
+		c8 = TextContent.createTextContent("There once was a really beautiful flower in a meadow");
 		s8 = new BasicSubmission(c8, u);
 		f.addItem(s8);
-//		c7 = new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic7, 300, 500));
-//		s7 = new BasicSubmission(c7, u);
-//		f.addItem(s7);
-//		c9 = new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic3, 300, 500));
-//		s9 = new BasicSubmission(c9, u);
-//		f.addItem(s7);
-//		c10 = new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic4, 300, 500));
-//		s10 = new BasicSubmission(c10, u);
-//		f.addItem(s7);
 		
         setContentView(R.layout.activity_main);
     }

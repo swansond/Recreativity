@@ -17,36 +17,37 @@ public class Data {
 	private static Map<Integer, Flow> flows = new HashMap<Integer, Flow>();
 	private static Map<Integer, Comment> comments = new HashMap<Integer, Comment>();
 	private static Map<Integer, User> users = new HashMap<Integer, User>();
+	private static Map<Integer, Content> content = new HashMap<Integer, Content>();
 	
 	static {
         User u = DefaultUser.newDefaultUser();
        	User u2 = DefaultUser.newDefaultUser();
 		Flow f = BasicFlow.newBasicFlow();
-		Content c = new TextContent("It's a wonderful world");
+		Content c = TextContent.createTextContent("It's a wonderful world");
 		Submission s = new BasicSubmission(c, u);
 		f.addItem(s);
 		Comment com = BasicComment.newBasicComment("This is sad", u2);
 		s.addComment(com);
-		Content c2 = new TextContent("It's a beautiful morning");
+		Content c2 = TextContent.createTextContent("It's a beautiful morning");
 		Submission s2 = new BasicSubmission(c2, u2);
 		f.addItem(s2);
 		User u3 = DefaultUser.newDefaultUser();
-		Content c3 = new TextContent("Th-th-th-that's all folks!");
+		Content c3 = TextContent.createTextContent("Th-th-th-that's all folks!");
 		Submission s3 = new BasicSubmission(c3, u3);
 		f.addItem(s3);
-		Content c4 = new TextContent("Bugs Bunny really likes to eat carrots");//ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic0));
+		Content c4 = TextContent.createTextContent("Bugs Bunny really likes to eat carrots");//ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic0));
 		Submission s4 = new BasicSubmission(c4, u);
 		f.addItem(s4);
-		Content c5 = new ImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.pic1));
+		Content c5 = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.pic1));
 		Submission s5 = new BasicSubmission(c5, u);
 		f.addItem(s5);
-		Content c6 = new ImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.pic2));
+		Content c6 = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.pic2));
 				// This is how large images should be called, if the code from the android developer site worked...
 				// http://developer.android.com/training/displaying-bitmaps/load-bitmap.html
 				//new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic2, 300, 500));
 		Submission s6 = new BasicSubmission(c6, u);
 		f.addItem(s6);
-		Content c8 = new TextContent("There once was a really beautiful flower in a meadow");
+		Content c8 = TextContent.createTextContent("There once was a really beautiful flower in a meadow");
 		Submission s8 = new BasicSubmission(c8, u);
 		f.addItem(s8);
         
@@ -91,6 +92,14 @@ public class Data {
 		return users.get(serial);
 	}
 
+	public static Content getContent(int serial) {
+		return content.get(serial);
+	}
+	
+	public static void addContent(int serial, Content c) {
+		content.put(serial, c);
+	}
+	
 	public static Collection<Flow> getAllFlows() {
 		return Collections.unmodifiableCollection(flows.values());
 	}
@@ -105,7 +114,7 @@ public class Data {
 	}
 
     private static void addImageToFlow(Flow flow, User user, int image) {
-		Content pic = new ImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), image));
+		Content pic = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), image));
 		Submission sub = new BasicSubmission(pic, user);
 		flow.addItem(sub);
     }

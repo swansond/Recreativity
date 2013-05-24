@@ -11,14 +11,23 @@ import android.os.Parcelable;
  *
  */
 public class TextContent implements Content {
+	private static int currentSerial = 1;
 	
 	private String entry;
 	private static Paint p = new Paint();
+	private int serial;
 	
-	public TextContent(String in) {
+	private TextContent(String in) {
 		entry = in;
 		p.setColor(-1);
 		p.setTextSize(50);
+		serial = currentSerial++;
+	}
+	
+	public static TextContent createTextContent(String in) {
+		TextContent out = new TextContent(in);
+		Data.addContent(out.serial, out);
+		return out;
 	}
 	
 	public TextContent(Parcel in) {
@@ -29,7 +38,7 @@ public class TextContent implements Content {
 	public void draw(Canvas canvas) {
 		int      lineHeight = 0;
 	    int      yoffset    = 0;
-	    String[] lines      = entry.split(" ");
+	    String[] lines      = entry.split("[ \n]");
 	    Rect drawSpace = new Rect(0,0,canvas.getWidth()-75,canvas.getHeight());
 
 	    // set height of each line (height of text + 20%)
@@ -89,4 +98,9 @@ public class TextContent implements Content {
 			return new TextContent[size];
 		}
 	};
+
+	@Override
+	public int serialNumber() {
+		return serial;
+	}
 }
