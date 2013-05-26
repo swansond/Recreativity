@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 		Data.addUser(u2.serialNumber(), u2);
 		f = BasicFlow.newBasicFlow();
 		Data.addFlow(f.serialNumber(), f);
-		c = new TextContent("It's a wonderful world");
+		c = new TextContent("It's a wonderful world!");
 		s = new BasicSubmission(c, u);
 		f.addItem(s);
 		com = BasicComment.newBasicComment("This is sad", u2);
@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
 		c3 = new TextContent("Th-th-th-that's all folks!");
 		s3 = new BasicSubmission(c3, u3);
 		f.addItem(s3);
-		c4 = new TextContent("Bugs Bunny really likes to eat carrots");//ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic0));
+		c4 = new TextContent("Bugs Bunny really \n likes to \n eat carrots");
 		s4 = new BasicSubmission(c4, u);
 		f.addItem(s4);
 		c5 = new ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic1));
@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 				//new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic2, 300, 500));
 		s6 = new BasicSubmission(c6, u);
 		f.addItem(s6);
-		c8 = new TextContent("There once was a really beautiful flower in a meadow");
+		c8 = new TextContent("There once was a \nreally beautiful flower in a meadow");
 		s8 = new BasicSubmission(c8, u);
 		f.addItem(s8);
 //		c7 = new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic7, 300, 500));

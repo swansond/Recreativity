@@ -23,7 +23,7 @@ public class ContentView extends View {
 	
 	@Override
 	public void onDraw(Canvas canvas) {
-		canvas.drawARGB(255, 42, 154, 110);
+		canvas.drawARGB(255, 127, 127, 127);
 		if (data != null) {
 			data.draw(canvas);
 		}
