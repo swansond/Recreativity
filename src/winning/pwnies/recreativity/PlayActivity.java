@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -43,6 +44,8 @@ public class PlayActivity extends FragmentActivity {
 		mPager = (ViewPager) findViewById(R.id.play_pager);
 		mPager.setAdapter(mAdapter);
 		mPager.setCurrentItem(0);
+		
+		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN); 
 	}
 
 	public void compose(View view) {
