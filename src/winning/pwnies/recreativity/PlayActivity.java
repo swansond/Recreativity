@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 public class PlayActivity extends FragmentActivity {
 	static final int NUM_ITEMS = 2;
@@ -47,6 +46,10 @@ public class PlayActivity extends FragmentActivity {
 
 	public void compose(View view) {
 		mPager.setCurrentItem(Data.COMPOSE);
+	}
+	
+	public void back(View view) {
+		mPager.setCurrentItem(Data.PROMPT);
 	}
 	
 	@Override
