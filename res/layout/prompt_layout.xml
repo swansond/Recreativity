@@ -4,15 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
-    <TextView
-        android:id="@+id/instructions"
+
+    <LinearLayout
+        android:id="@+id/caseboxthing"
         android:layout_width="match_parent"
-        android:layout_height="74dp"
-        android:paddingLeft="3dp"
-        android:text="Write something based \non this prompt:"
-        android:textSize="25sp" />
-    
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="74dp"
+            android:paddingLeft="3dp"
+            android:text="Write something based \non this prompt:"
+            android:textSize="25sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_edit" />
+    </LinearLayout>
+
     <winning.pwnies.recreativity.ContentView
         android:id="@+id/contentView"
         android:layout_width="match_parent"

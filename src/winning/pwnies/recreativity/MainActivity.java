@@ -78,7 +78,9 @@ public class MainActivity extends Activity {
 		s8 = new BasicSubmission(c8, u);
 		f.addItem(s8);
 		
-        setContentView(R.layout.activity_main);
+		
+		Data.goToPlay(this);
+        //setContentView(R.layout.activity_main);
     }
 
 
