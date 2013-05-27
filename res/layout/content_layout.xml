@@ -22,7 +22,7 @@
         android:contentDescription="@string/starinstructions"
         android:gravity="bottom"
         android:onClick="onClick"
-        android:src="@drawable/star"
+        android:src="@drawable/star_white"
         android:visibility="visible" />
 
 </LinearLayout>

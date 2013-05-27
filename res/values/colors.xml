@@ -4,5 +4,6 @@
     <color name="blue">#ff0000ff</color>
     <color name="light_grey">#CDCDCD</color>
     <color name="wheat">#F5F5DC</color>
-    <color name="black">#000000</color>
+    <color name="black">#80000000</color>
+    <color name="dark_grey">#575757</color>
 </resources>

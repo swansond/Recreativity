@@ -47,7 +47,8 @@ public class TextContent implements Content {
 	    String line = "";
 	    for (int i = 0; i < lines.length; ++i) {
 
-	        if(calculateWidthFromFontSize(line + " " + lines[i], 50) <= drawSpace.width()){
+	        if(calculateWidthFromFontSize(line + " " + lines[i], 50) <= drawSpace.width()
+	        		&& !lines[i].contains("\n")){
 	            line = line + " " + lines[i];
 
 	        }else{

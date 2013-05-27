@@ -15,21 +15,24 @@
 	        android:id="@+id/instructions"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
+	        android:textSize="20dp"
+	        android:textStyle="italic"
 	        android:text="Write something you connect to..." />
 
 	    <TextView
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/instructions"
-	        android:text="\n\n\nRainbow of Lilies \n\nWhat are lilies" />
-
-	    <ImageButton
-	        android:id="@+id/imageButton1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentBottom="true"
-	        android:layout_centerHorizontal="true"
-	        android:src="@android:drawable/ic_menu_edit" />
+	        android:layout_marginBottom="20dp"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginRight="20dp"
+	        android:layout_marginTop="20dp"
+	        android:background="@drawable/rectbg"
+	        android:paddingLeft="10dp"
+	        android:paddingRight="10dp"
+	        android:text="\n Rainbow of Lilies \n What are lilies?\n Do they bloom in the day?\n Do they sleep in the night?\n Lilies\n What are lilies?\n"
+	        android:textColor="@color/wheat"
+	        android:textSize="20dp" />
 
 	</LinearLayout>
 
@@ -76,11 +79,37 @@
 		        android:id="@+id/sendToFriend"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="Call Upon a Friend" />
+		        android:text="Send to a Friend" />
 	        
 	        ></LinearLayout>	    
 	    
 	    
     </LinearLayout>
+
+	<ImageButton
+	    android:id="@+id/imageButton1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentRight="true"
+	    android:src="@android:drawable/ic_menu_edit" />
+
+	<ImageButton
+	    android:id="@+id/ImageButton2"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignTop="@+id/imageButton1"
+	    android:layout_toLeftOf="@+id/imageButton1"
+	    android:src="@drawable/draw_icon" />
+
+	<ImageButton
+	    android:id="@+id/imageButton3"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignTop="@+id/ImageButton2"
+	    android:layout_toLeftOf="@+id/ImageButton2"
+	    android:src="@drawable/response_type_3" />
     
 </RelativeLayout>

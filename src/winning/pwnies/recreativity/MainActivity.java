@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
 		c3 = TextContent.createTextContent("Th-th-th-that's all folks!");
 		s3 = new BasicSubmission(c3, u3);
 		f.addItem(s3);
-		c4 = TextContent.createTextContent("Bugs Bunny really likes to eat carrots");//ImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic0));
+		c4 = TextContent.createTextContent("Bugs Bunny really \n likes to \n eat carrots");
 		s4 = new BasicSubmission(c4, u);
 		f.addItem(s4);
 		c5 = ImageContent.createImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic1));
@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 				//new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic2, 300, 500));
 		s6 = new BasicSubmission(c6, u);
 		f.addItem(s6);
-		c8 = TextContent.createTextContent("There once was a really beautiful flower in a meadow");
+		c8 = TextContent.createTextContent("There once was a \nreally beautiful flower in a meadow");
 		s8 = new BasicSubmission(c8, u);
 		f.addItem(s8);
 		
