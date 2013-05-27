@@ -19,7 +19,8 @@
             android:id="@+id/backToPrompt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back to Prompt" />
+            android:onClick="back"
+            android:text="Back" />
 
         <Button
             android:id="@+id/submit"
@@ -31,6 +32,7 @@
             android:id="@+id/sendToFriend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="unimplemented"
             android:text="Send to Friend" />
     </LinearLayout>
 

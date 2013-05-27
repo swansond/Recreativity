@@ -7,15 +7,16 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 public class PlayActivity extends FragmentActivity {
 	static final int NUM_ITEMS = 2;
@@ -43,10 +44,22 @@ public class PlayActivity extends FragmentActivity {
 		mPager = (ViewPager) findViewById(R.id.play_pager);
 		mPager.setAdapter(mAdapter);
 		mPager.setCurrentItem(0);
+		
+		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN); 
 	}
 
 	public void compose(View view) {
 		mPager.setCurrentItem(Data.COMPOSE);
+	}
+	
+	public void back(View view) {
+		mPager.setCurrentItem(Data.PROMPT);
+	}
+	
+	public void unimplemented(View view) {
+		Log.e("logging", "The button has been clicked");
+		Intent intent = new Intent(this, ProfileActivity.class);
+		startActivity(intent);
 	}
 	
 	@Override
