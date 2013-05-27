@@ -14,6 +14,9 @@ public class Data {
 	public static final String SUBMISSION = "submission";
 	public static final String ARG_OBJECT = "object";
 	public static final String FLOW = "flow";
+	public static final String STATUS = "status";
+	public static final int PROMPT = 0;
+	public static final int COMPOSE = 1;
 	private static Map<Integer, Flow> flows = new HashMap<Integer, Flow>();
 	private static Map<Integer, Comment> comments = new HashMap<Integer, Comment>();
 	private static Map<Integer, User> users = new HashMap<Integer, User>();

@@ -36,7 +36,7 @@ public class BasicSubmission implements Submission {
 		stars = in.readInt();
 		id = in.readInt();
 		author = Data.getUser(in.readInt());
-		entry = in.readParcelable(Content.class.getClassLoader());
+		entry = Data.getContent(in.readInt());
 		flow = Data.getFlow(in.readInt());
 		index = in.readInt();
 		int size = in.readInt();
@@ -146,7 +146,7 @@ public class BasicSubmission implements Submission {
 		dest.writeInt(stars);
 		dest.writeInt(id);
 		dest.writeInt(author.serialNumber());
-		dest.writeParcelable(entry, 0);
+		dest.writeInt(entry.serialNumber());
 		dest.writeInt(flow.serialNumber());
 		dest.writeInt(index);
 		dest.writeInt(starred.size());
