@@ -16,6 +16,12 @@
         android:orientation="horizontal" >
 
         <Button
+            android:id="@+id/backToPrompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back to Prompt" />
+
+        <Button
             android:id="@+id/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +31,7 @@
             android:id="@+id/sendToFriend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Call Upon a Friend" />
+            android:text="Send to Friend" />
     </LinearLayout>
 
 </LinearLayout>

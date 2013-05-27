@@ -45,6 +45,10 @@ public class PlayActivity extends FragmentActivity {
 		mPager.setCurrentItem(0);
 	}
 
+	public void compose(View view) {
+		mPager.setCurrentItem(Data.COMPOSE);
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);

@@ -38,7 +38,7 @@ public class TextContent implements Content {
 	public void draw(Canvas canvas) {
 		int      lineHeight = 0;
 	    int      yoffset    = 0;
-	    String[] lines      = entry.split("[ \n]");
+	    String[] lines      = entry.split(" ");
 	    Rect drawSpace = new Rect(0,0,canvas.getWidth()-75,canvas.getHeight());
 
 	    // set height of each line (height of text + 20%)
