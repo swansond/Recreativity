@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -50,6 +51,12 @@ public class PlayActivity extends FragmentActivity {
 	
 	public void back(View view) {
 		mPager.setCurrentItem(Data.PROMPT);
+	}
+	
+	public void unimplemented(View view) {
+		Log.e("logging", "The button has been clicked");
+		Intent intent = new Intent(this, ProfileActivity.class);
+		startActivity(intent);
 	}
 	
 	@Override
