@@ -3,10 +3,12 @@
    android:layout_width="fill_parent"
    android:layout_height="fill_parent"
    android:orientation="vertical" >
+
    <TextView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:text="This feature not yet implemented" />
+       android:text="Sorry, this feature is not yet implemented! Please click the back button to return to the previous screen."
+       android:textSize="25dp" />
 
    <ImageView
        android:layout_width="match_parent"
