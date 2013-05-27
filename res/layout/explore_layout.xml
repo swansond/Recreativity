@@ -10,20 +10,12 @@
         android:layout_height="33dp"
         android:orientation="horizontal" >
 
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/search_str" >
-        </EditText>
-
         <SearchView
             android:id="@+id/searchView1"
-            android:layout_width="36dp"
+            android:layout_width="match_parent"
             android:layout_height="33dp" >
         </SearchView>
+
     </LinearLayout>
 
     <ScrollView 
