@@ -118,9 +118,8 @@ public class PlayActivity extends FragmentActivity {
 					public void onClick(View v) {
 						// gets the text the user entered, not sure what to do with it
 						EditText mEdit   = (EditText)casing.findViewById(R.id.response);
-						mEdit.setLines(7);
 						String text = mEdit.getText().toString();
-						text.replaceAll("[\n]", "[\n] ");
+						text = text.replaceAll("\n", "\n ");
 						Data.getFlow(1).addItem(new BasicSubmission(TextContent.createTextContent(text), Data.getUser(1)));
 						Intent intent = new Intent(casing.getContext(), ViewSubmissionActivity.class);
 						intent.putExtra(Data.SUBMISSION, Data.getFlow(1).size() - 1);
