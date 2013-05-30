@@ -12,8 +12,9 @@
 
         <SearchView
             android:id="@+id/searchView1"
-            android:layout_width="match_parent"
-            android:layout_height="33dp" >
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:padding="0dp" >
         </SearchView>
 
     </LinearLayout>
@@ -40,7 +41,7 @@
                 android:id="@+id/flowlistview"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@color/light_grey"
+                android:background="@color/black"
                 android:gravity="center"
                 android:orientation="horizontal" >
 
@@ -87,9 +88,15 @@
                 android:id="@+id/flowlistview2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@color/wheat"
+                android:background="@color/black"
                 android:gravity="center"
                 android:orientation="horizontal" >
+                
+                <View 
+				    android:layout_width="fill_parent" 
+				    android:layout_height="2dp" 
+				    android:background="@color/light_grey" 
+				    /> 
 
                 <ImageButton
                     android:id="@+id/imageView4"
@@ -133,10 +140,16 @@
                 android:id="@+id/flowlistview3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@color/light_grey"
+                android:background="@color/black"
                 android:gravity="center"
                 android:onClick="@string/menu_play"
                 android:orientation="horizontal" >
+                
+                <View 
+				    android:layout_width="fill_parent" 
+				    android:layout_height="2dp" 
+				    android:background="@color/light_grey" 
+				    />
 
                 <ImageButton
                     android:id="@+id/imageView7"

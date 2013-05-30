@@ -49,20 +49,20 @@ public class MainActivity extends Activity {
 		Data.addUser(u2.serialNumber(), u2);
 		f = BasicFlow.newBasicFlow();
 		Data.addFlow(f.serialNumber(), f);
-		c = TextContent.createTextContent("It's a wonderful world");
+		c = TextContent.createTextContent("Flowers \n are everywhere \n in trees, in houses, in gardens \n Flowers");
 		s = new BasicSubmission(c, u);
 		f.addItem(s);
-		com = BasicComment.newBasicComment("This is sad", u2);
+		com = BasicComment.newBasicComment("Nature heals the soul \n Heals ailments, coughs, and sneezes \n Nature heals my heart ", u2);
 		s.addComment(com);
-		c2 = TextContent.createTextContent("It's a beautiful morning");
+		c2 = TextContent.createTextContent("Haikus aren't funny \n Haikus are overrated \n Refrigerator");
 		s2 = new BasicSubmission(c2, u2);
 		f.addItem(s2);
 		u3 = DefaultUser.newDefaultUser();
 		Data.addUser(u3.serialNumber(), u3);
-		c3 = TextContent.createTextContent("Th-th-th-that's all folks!");
+		c3 = TextContent.createTextContent("I don't like poetry \n not one bit \n but some times I feel \n like making one fit");
 		s3 = new BasicSubmission(c3, u3);
 		f.addItem(s3);
-		c4 = TextContent.createTextContent("Bugs Bunny really \n likes to \n eat carrots");
+		c4 = TextContent.createTextContent("Read my poetry \n My poetry is enough \n My poetry is independent \n My poetry creates itself.");
 		s4 = new BasicSubmission(c4, u);
 		f.addItem(s4);
 		c5 = ImageContent.createImageContent(BitmapFactory.decodeResource(getResources(), R.drawable.pic1));
@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 				//new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic2, 300, 500));
 		s6 = new BasicSubmission(c6, u);
 		f.addItem(s6);
-		c8 = TextContent.createTextContent("There once was a \nreally beautiful flower in a meadow");
+		c8 = TextContent.createTextContent("Morning dew sparkles \n Tiger lilies greet the day \n Summer has arrived");
 		s8 = new BasicSubmission(c8, u);
 		f.addItem(s8);
 		

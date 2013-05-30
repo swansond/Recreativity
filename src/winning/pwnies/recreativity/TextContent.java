@@ -1,6 +1,7 @@
 package winning.pwnies.recreativity;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Parcel;
@@ -16,11 +17,13 @@ public class TextContent implements Content {
 	private String entry;
 	private static Paint p = new Paint();
 	private int serial;
+
+	private boolean isPrompt;
 	
 	private TextContent(String in) {
 		entry = in;
 		p.setColor(-1);
-		p.setTextSize(50);
+		p.setTextSize(40);
 		serial = currentSerial++;
 	}
 	
@@ -34,31 +37,66 @@ public class TextContent implements Content {
 		entry = in.readString();
 	}
 	
+	public void isPrompt(boolean isPrompt) {
+		this.isPrompt = isPrompt;
+	}
+	
+
 	@Override
 	public void draw(Canvas canvas) {
 		int      lineHeight = 0;
 	    int      yoffset    = 0;
+	    int 	 xoffset = 0;
 	    String[] lines      = entry.split(" ");
-	    Rect drawSpace = new Rect(0,0,canvas.getWidth()-75,canvas.getHeight());
+	    
+	    
+	    Rect drawSpace;
+	    if (isPrompt) {  	
+	    	p.setColor(Color.WHITE);
+	    	canvas.drawRect(75, 10, canvas.getWidth()-130, canvas.getHeight()-700, p);
+	    	p.setColor(Color.DKGRAY);
+	    	canvas.drawRect(80, 15, canvas.getWidth()-140, canvas.getHeight()-710, p);
+	    	drawSpace = new Rect(80,15,canvas.getWidth()-145,canvas.getHeight()-710);
+	    	p.setColor(Color.WHITE);
+	    	xoffset = 35;
+	    } else {	    
+	    	drawSpace = new Rect(0,0,canvas.getWidth()-75,canvas.getHeight());
+	    }
 
 	    // set height of each line (height of text + 20%)
-	    lineHeight = (int) (calculateHeightFromFontSize(entry, 50) * 1.2);
+	    lineHeight = (int) (calculateHeightFromFontSize(entry, 40) * 1.2);
 	    // draw each line
 	    String line = "";
 	    for (int i = 0; i < lines.length; ++i) {
 
-	        if(calculateWidthFromFontSize(line + " " + lines[i], 50) <= drawSpace.width()
+	        if(calculateWidthFromFontSize(line + " " + lines[i], 40) <= drawSpace.width()
 	        		&& !lines[i].contains("\n")){
 	            line = line + " " + lines[i];
 
 	        }else{
-	            canvas.drawText(line, 50, 200 + yoffset, p);
+	        	while (line.length() > 0 && line.substring(0, 1).equals(" ")) {  // sometimes accidentally starts with a space so delete it
+	        		line = line.substring(1);
+	        	}
+	            canvas.drawText(line, 50 + xoffset, 70 + yoffset, p);
 	            yoffset = yoffset + lineHeight;
-	            line = lines[i];
+	            if (line.contains("\n")) {
+	            	line = "";
+	            } else {
+	            	line = lines[i];
+	            }
 	        }
 	    }
-	    canvas.drawText(line, 50, 200 + yoffset, p);
+	    
+	    while (line.substring(0, 1).equals(" ")) {  // sometimes accidentally starts with a space so delete it
+    		line = line.substring(1);
+    	}
+	    canvas.drawText(line, 50+xoffset, 70 + yoffset, p);
+	    
+	    if (isPrompt) {
+//	    	isPrompt = false;  // TODO check
+	    }
 	}
+
 	
 	private int calculateWidthFromFontSize(String testString, int currentSize)
 	{

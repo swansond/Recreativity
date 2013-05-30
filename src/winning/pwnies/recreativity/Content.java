@@ -7,6 +7,8 @@ public interface Content extends Parcelable {
 
 	public void draw(Canvas canvas);
 	
+	public void isPrompt(boolean isPrompt);
+	
 	public int serialNumber();
 	
 }
