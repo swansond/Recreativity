@@ -45,28 +45,36 @@ public class ExploreActivity extends Activity {
 			Log.e("counter", Integer.toString(++i));
 		}
 		// first flow
-		View pic1 = findViewById(R.id.imageView1);
-		pic1.setOnClickListener(new SubmissionListener(2, 0));
-		View pic2 = findViewById(R.id.imageView2);
-		pic2.setOnClickListener(new SubmissionListener(2, 1));
-		View pic3 = findViewById(R.id.imageView3);
-		pic3.setOnClickListener(new SubmissionListener(2, 2));
+		findViewById(R.id.flow5sub1).setOnClickListener(new SubmissionListener(5, 0));
+		findViewById(R.id.flow5sub2).setOnClickListener(new SubmissionListener(5, 1));
+		findViewById(R.id.flow5sub3).setOnClickListener(new SubmissionListener(5, 2));
+		findViewById(R.id.flow5sub4).setOnClickListener(new SubmissionListener(5, 3));
+		findViewById(R.id.flow5sub5).setOnClickListener(new SubmissionListener(5, 4));
 
 		// second flow
-		View pic4 = findViewById(R.id.imageView4);
-		pic4.setOnClickListener(new SubmissionListener(3, 0));
-		View pic6 = findViewById(R.id.imageView6);
-		pic6.setOnClickListener(new SubmissionListener(3, 1));
-		View pic5 = findViewById(R.id.imageView5);
-		pic5.setOnClickListener(new SubmissionListener(3, 2));
+		findViewById(R.id.flow6sub1).setOnClickListener(new SubmissionListener(6, 0));
+		findViewById(R.id.flow6sub2).setOnClickListener(new SubmissionListener(6, 1));
+		findViewById(R.id.flow6sub3).setOnClickListener(new SubmissionListener(6, 2));
+		findViewById(R.id.flow6sub4).setOnClickListener(new SubmissionListener(6, 3));
+		findViewById(R.id.flow6sub5).setOnClickListener(new SubmissionListener(6, 4));
 
 		// third flow
-		View pic7 = findViewById(R.id.imageView7);
-		pic7.setOnClickListener(new SubmissionListener(4, 0));
-		View pic9 = findViewById(R.id.imageView9);
-		pic9.setOnClickListener(new SubmissionListener(4, 1));
-		View pic8 = findViewById(R.id.imageView8);
-		pic8.setOnClickListener(new SubmissionListener(4, 2));
+		findViewById(R.id.flow7sub1).setOnClickListener(new SubmissionListener(7, 0));
+		findViewById(R.id.flow7sub2).setOnClickListener(new SubmissionListener(7, 1));
+		findViewById(R.id.flow7sub3).setOnClickListener(new SubmissionListener(7, 2));
+		findViewById(R.id.flow7sub4).setOnClickListener(new SubmissionListener(7, 3));
+		findViewById(R.id.flow7sub5).setOnClickListener(new SubmissionListener(7, 4));
+		findViewById(R.id.flow7sub6).setOnClickListener(new SubmissionListener(7, 5));
+		findViewById(R.id.flow7sub7).setOnClickListener(new SubmissionListener(7, 6));
+		
+		// third flow
+		findViewById(R.id.flow1sub1).setOnClickListener(new SubmissionListener(1, 0));
+		findViewById(R.id.flow1sub2).setOnClickListener(new SubmissionListener(1, 1));
+		findViewById(R.id.flow1sub3).setOnClickListener(new SubmissionListener(1, 2));
+		findViewById(R.id.flow1sub4).setOnClickListener(new SubmissionListener(1, 3));
+		findViewById(R.id.flow1sub5).setOnClickListener(new SubmissionListener(1, 4));
+		findViewById(R.id.flow1sub6).setOnClickListener(new SubmissionListener(1, 5));
+		findViewById(R.id.flow1sub7).setOnClickListener(new SubmissionListener(1, 6));
 	}
 
 	public void goToFlow(int flow, int submission) {
