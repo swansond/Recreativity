@@ -45,10 +45,10 @@ public class Data {
 			TextContent c4 = TextContent.createTextContent("Read my poetry \n My poetry is enough \n My poetry is independent \n My poetry creates itself.");
 			BasicSubmission s4 = new BasicSubmission(c4, u);
 			f.addItem(s4);
-			Content c5 = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.pic1));
+			Content c5 = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.rose_pic));
 			BasicSubmission s5 = new BasicSubmission(c5, u);
 			f.addItem(s5);
-			Content c6 = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.pic2));
+			Content c6 = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.roses));
 					// This is how large images should be called, if the code from the android developer site worked...
 					// http://developer.android.com/training/displaying-bitmaps/load-bitmap.html
 					//new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic2, 300, 500));
