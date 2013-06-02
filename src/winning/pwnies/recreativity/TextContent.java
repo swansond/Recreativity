@@ -51,17 +51,17 @@ public class TextContent implements Content {
 	    
 	    
 	    Rect drawSpace;
-	    if (isPrompt) {  	
+//	    if (isPrompt) {  	
 	    	p.setColor(Color.WHITE);
-	    	canvas.drawRect(75, 10, canvas.getWidth()-130, canvas.getHeight()-700, p);
+	    	canvas.drawRect(75, 10, canvas.getWidth()-120, canvas.getHeight()-400, p);
 	    	p.setColor(Color.DKGRAY);
-	    	canvas.drawRect(80, 15, canvas.getWidth()-140, canvas.getHeight()-710, p);
-	    	drawSpace = new Rect(80,15,canvas.getWidth()-145,canvas.getHeight()-710);
+	    	canvas.drawRect(80, 15, canvas.getWidth()-130, canvas.getHeight()-410, p);
+	    	drawSpace = new Rect(83,15,canvas.getWidth()-145,canvas.getHeight()-710);
 	    	p.setColor(Color.WHITE);
 	    	xoffset = 35;
-	    } else {	    
-	    	drawSpace = new Rect(0,0,canvas.getWidth()-75,canvas.getHeight());
-	    }
+//	    } else {	    
+//	    	drawSpace = new Rect(0,0,canvas.getWidth()-75,canvas.getHeight());
+//	    }
 
 	    // set height of each line (height of text + 20%)
 	    lineHeight = (int) (calculateHeightFromFontSize(entry, 40) * 1.2);
