@@ -45,10 +45,10 @@ public class Data {
 			TextContent c4 = TextContent.createTextContent("Read my poetry \n My poetry is enough \n My poetry is independent \n My poetry creates itself.");
 			BasicSubmission s4 = new BasicSubmission(c4, u);
 			f.addItem(s4);
-			Content c5 = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.pic1));
+			Content c5 = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.rose_pic));
 			BasicSubmission s5 = new BasicSubmission(c5, u);
 			f.addItem(s5);
-			Content c6 = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.pic2));
+			Content c6 = ImageContent.createImageContent(BitmapFactory.decodeResource(Recreativity.context().getResources(), R.drawable.roses));
 					// This is how large images should be called, if the code from the android developer site worked...
 					// http://developer.android.com/training/displaying-bitmaps/load-bitmap.html
 					//new ImageContent(decodeSampledBitmapFromResource(getResources(), R.drawable.pic2, 300, 500));
@@ -73,8 +73,32 @@ public class Data {
 		addImageToFlow(f4, u2, R.drawable.pic2);
 		addImageToFlow(f4, u3, R.drawable.pic4);
 		addImageToFlow(f4, u, R.drawable.pic3);
+		
+		Flow f5 = BasicFlow.newBasicFlow();
+		TextContent tc1 = TextContent.createTextContent("Flowers are blooming \n Bursts of colors come alive \n Fragrant smells around us!");
+		BasicSubmission sub1 = new BasicSubmission(tc1, u);
+		f.addItem(sub1);
+		addImageToFlow(f5, u, R.drawable.flow5sub2);
+		addImageToFlow(f5, u2, R.drawable.flow5sub3);
+		addImageToFlow(f5, u3, R.drawable.flow5sub4);
+		addImageToFlow(f5, u, R.drawable.flow5sub5);
+		
+		Flow f6 = BasicFlow.newBasicFlow();
+		addImageToFlow(f6, u2, R.drawable.flow6sub1);
+		addImageToFlow(f6, u3, R.drawable.flow6sub2);
+		addImageToFlow(f6, u, R.drawable.flow6sub3);
+		addImageToFlow(f6, u2, R.drawable.flow6sub4);
+		addImageToFlow(f6, u3, R.drawable.flow6sub5);
+		
+		Flow f7 = BasicFlow.newBasicFlow();
+		addImageToFlow(f7, u3, R.drawable.flow7sub1);
+		addImageToFlow(f7, u2, R.drawable.flow7sub2);
+		addImageToFlow(f7, u, R.drawable.flow7sub3);
+		addImageToFlow(f7, u3, R.drawable.flow7sub4);
+		addImageToFlow(f7, u2, R.drawable.flow7sub5);
+		addImageToFlow(f7, u, R.drawable.flow7sub6);
+		addImageToFlow(f7, u, R.drawable.flow7sub7);
 	}
-	
 	
 	public static void addFlow(int serial, Flow flow) {
 		flows.put(serial, flow);

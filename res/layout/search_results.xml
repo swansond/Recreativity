@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mama"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="33dp"
+        android:orientation="horizontal" >
+
+        <SearchView
+            android:id="@+id/searchView1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:padding="0dp" >
+        </SearchView>
+
+    </LinearLayout>
+
+    <ScrollView 
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="vertical" 
+        android:focusable="true"
+    	android:focusableInTouchMode="true" >
+
+        <HorizontalScrollView
+            android:id="@+id/scrollview1"
+            android:layout_width="fill_parent"
+            android:layout_height="172dp"
+            android:scrollbars="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/flowlistview"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:id="@+id/flow5sub1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/flowers_poem" />
+
+                <ImageButton
+                    android:id="@+id/flow5sub2"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow5sub2" />
+
+                <ImageButton
+                    android:id="@+id/flow5sub3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow5sub3" />
+                
+                <ImageButton
+                    android:id="@+id/flow5sub4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow5sub4" />
+                
+                <ImageButton
+                    android:id="@+id/flow5sub5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow5sub5" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+            android:id="@+id/scrollview2"
+            android:layout_width="fill_parent"
+            android:layout_height="172dp"
+            android:scrollbars="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/flowlistview2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:gravity="center"
+                android:orientation="horizontal" >
+                
+                <View 
+				    android:layout_width="fill_parent" 
+				    android:layout_height="2dp" 
+				    android:background="@color/light_grey" 
+				    /> 
+
+                <ImageButton
+                    android:id="@+id/flow6sub1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow6sub1" />
+                
+                <ImageButton
+                    android:id="@+id/flow6sub2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow6sub2" />
+                                
+                <ImageButton
+                    android:id="@+id/flow6sub3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow6sub3" />
+                                
+                <ImageButton
+                    android:id="@+id/flow6sub4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow6sub4" />
+
+                <ImageButton
+                    android:id="@+id/flow6sub5"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow6sub5" />
+
+                <ImageButton
+                    android:id="@+id/imageView5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image3" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+            android:id="@+id/scrollview3"
+            android:layout_width="fill_parent"
+            android:layout_height="174dp"
+            android:scrollbars="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/flowlistview3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:gravity="center"
+                android:onClick="@string/menu_play"
+                android:orientation="horizontal" >
+                
+                <View 
+				    android:layout_width="fill_parent" 
+				    android:layout_height="2dp" 
+				    android:background="@color/light_grey" 
+				    />
+
+                <ImageButton
+                    android:id="@+id/flow7sub1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub1" />
+                
+                <ImageButton
+                    android:id="@+id/flow7sub2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub2" />
+
+                <ImageButton
+                    android:id="@+id/flow7sub3"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub3" />
+
+                <ImageButton
+                    android:id="@+id/flow7sub4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub4" />
+                
+                <ImageButton
+                    android:id="@+id/flow7sub5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub5" />
+                
+                <ImageButton
+                    android:id="@+id/flow7sub6"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub6" />
+                
+                <ImageButton
+                    android:id="@+id/flow7sub7"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub7" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
