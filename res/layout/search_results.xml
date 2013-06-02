@@ -54,8 +54,8 @@
                     android:paddingLeft="0dp"
                     android:paddingRight="0dp"
                     android:paddingTop="5dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/pic4" />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/flowers_poem" />
 
                 <ImageButton
                     android:id="@+id/flow5sub2"
@@ -123,7 +123,7 @@
 				    /> 
 
                 <ImageButton
-                    android:id="@+id/imageView4"
+                    android:id="@+id/flow6sub1"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="3dp"
@@ -132,14 +132,50 @@
                     android:paddingRight="0dp"
                     android:paddingTop="5dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/image2" />
+                    android:src="@drawable/flow6sub1" />
+                
+                <ImageButton
+                    android:id="@+id/flow6sub2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow6sub2" />
+                                
+                <ImageButton
+                    android:id="@+id/flow6sub3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow6sub3" />
+                                
+                <ImageButton
+                    android:id="@+id/flow6sub4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow6sub4" />
 
                 <ImageButton
-                    android:id="@+id/imageView6"
+                    android:id="@+id/flow6sub5"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/image4" />
+                    android:src="@drawable/flow6sub5" />
 
                 <ImageButton
                     android:id="@+id/imageView5"
@@ -177,7 +213,7 @@
 				    />
 
                 <ImageButton
-                    android:id="@+id/imageView7"
+                    android:id="@+id/flow7sub1"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="3dp"
@@ -186,17 +222,29 @@
                     android:paddingRight="0dp"
                     android:paddingTop="5dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/pic2" />
+                    android:src="@drawable/flow7sub1" />
+                
+                <ImageButton
+                    android:id="@+id/flow7sub2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub2" />
 
                 <ImageButton
-                    android:id="@+id/imageView9"
+                    android:id="@+id/flow7sub3"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/pic4" />
+                    android:src="@drawable/flow7sub3" />
 
                 <ImageButton
-                    android:id="@+id/imageView8"
+                    android:id="@+id/flow7sub4"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="3dp"
@@ -205,7 +253,43 @@
                     android:paddingRight="0dp"
                     android:paddingTop="5dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/pic3" />
+                    android:src="@drawable/flow7sub4" />
+                
+                <ImageButton
+                    android:id="@+id/flow7sub5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub5" />
+                
+                <ImageButton
+                    android:id="@+id/flow7sub6"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub6" />
+                
+                <ImageButton
+                    android:id="@+id/flow7sub7"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="3dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/flow7sub7" />
             </LinearLayout>
         </HorizontalScrollView>
     </LinearLayout>
