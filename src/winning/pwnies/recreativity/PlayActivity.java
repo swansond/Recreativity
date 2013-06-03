@@ -122,17 +122,19 @@ public class PlayActivity extends FragmentActivity {
 			if (decision == Data.PROMPT) {
 				LinearLayout casing = (LinearLayout) inflater.inflate(R.layout.prompt_layout, container, false);
 				ContentView content = (ContentView) casing.findViewById(R.id.contentView);
-				content.setContent(submission.getContent());
+				content.setContent(submission.getContent(), true);
 				return casing;
 			} else if (decision == Data.COMPOSE) {
 				final LinearLayout casing = (LinearLayout) inflater.inflate(R.layout.compose_layout, container, false);
 				Button submit = (Button) casing.findViewById(R.id.submit);
 				submit.setOnClickListener(new Button.OnClickListener() {
 					public void onClick(View v) {
-						// gets the text the user entered, not sure what to do with it
+						// gets the text the user entered, not sure what to do with it				
 						EditText mEdit   = (EditText)casing.findViewById(R.id.response);
 						String text = mEdit.getText().toString();
-						text = text.replaceAll("\n", "\n ");
+						// TODO make sure not blank submission
+						text = text.replaceAll("\n", " \n ");
+						
 						Data.getFlow(1).addItem(new BasicSubmission(TextContent.createTextContent(text), Data.getUser(1)));
 						Intent intent = new Intent(casing.getContext(), ViewSubmissionActivity.class);
 						intent.putExtra(Data.SUBMISSION, Data.getFlow(1).size() - 1);

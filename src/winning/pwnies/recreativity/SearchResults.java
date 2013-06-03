@@ -7,6 +7,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class ExploreActivity extends Activity {
+public class SearchResults extends Activity {
 	private List<FlowDisplay> views;
 	@SuppressWarnings("unused")
 	private Button viewFlowButton;
@@ -27,7 +28,7 @@ public class ExploreActivity extends Activity {
 		for (Flow f : col) {
 			views.add(new FlowDisplay(f));
 		}
-		setContentView(R.layout.explore_layout);
+		setContentView(R.layout.search_results);
 		int i = 0;
 		for (FlowDisplay f : views) {
 			View itemView = getLayoutInflater().inflate(R.layout.flow_view_layout, (ViewGroup) findViewById(R.id.mama), false);
@@ -66,15 +67,6 @@ public class ExploreActivity extends Activity {
 		findViewById(R.id.flow7sub5).setOnClickListener(new SubmissionListener(7, 4));
 		findViewById(R.id.flow7sub6).setOnClickListener(new SubmissionListener(7, 5));
 		findViewById(R.id.flow7sub7).setOnClickListener(new SubmissionListener(7, 6));
-		
-		// third flow
-		findViewById(R.id.flow1sub1).setOnClickListener(new SubmissionListener(1, 0));
-		findViewById(R.id.flow1sub2).setOnClickListener(new SubmissionListener(1, 1));
-		findViewById(R.id.flow1sub3).setOnClickListener(new SubmissionListener(1, 2));
-		findViewById(R.id.flow1sub4).setOnClickListener(new SubmissionListener(1, 3));
-		findViewById(R.id.flow1sub5).setOnClickListener(new SubmissionListener(1, 4));
-		findViewById(R.id.flow1sub6).setOnClickListener(new SubmissionListener(1, 5));
-		findViewById(R.id.flow1sub7).setOnClickListener(new SubmissionListener(1, 6));
 	}
 
 	public void goToFlow(int flow, int submission) {
@@ -95,7 +87,7 @@ public class ExploreActivity extends Activity {
 
 		public void onClick(View v) {
 			Flow f = Data.getFlow(flow);
-			Log.d("Explore", f.serialNumber() + "");
+			Log.d("Search Results", f.serialNumber() + "");
 			goToFlow(flow, submission);
 		}
 	}
@@ -118,13 +110,12 @@ public class ExploreActivity extends Activity {
 		case R.id.menu_profile:
 			Data.goToProfile(this);
 			break;
+		case android.R.id.home:
+	        NavUtils.navigateUpFromSameTask(this);
+	        return true;
 		default:
 			break;
 		}
 		return true;
 	}
 }
-
-
-
-

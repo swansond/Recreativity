@@ -3,6 +3,7 @@ package winning.pwnies.recreativity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,9 +50,13 @@ public class ViewSubmissionActivity extends FragmentActivity {
 		case R.id.menu_profile:
 			Data.goToProfile(this);
 			break;
+		case android.R.id.home:
+	        NavUtils.navigateUpFromSameTask(this);
+	        return true;
 		default:
 			break;
 		}
-		return true;
+//		return true;
+		return super.onOptionsItemSelected(item);
 	}
 }

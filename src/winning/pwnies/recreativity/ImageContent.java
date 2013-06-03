@@ -67,5 +67,11 @@ public class ImageContent implements Content {
 		return serial;
 	}
 
+	@Override
+	public void isPrompt(boolean isPrompt) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
 
