@@ -68,9 +68,11 @@ public class TabActivity extends Activity {
 	            // If not, instantiate and add it to the activity
 	            myFragment = Fragment.instantiate(myActivity, myClass.getName());
 	            ft.add(android.R.id.content, myFragment, myTag);
+
 	        } else {
 	            // If it exists, simply attach it in order to show it
 	            ft.attach(myFragment);
+
 	        }
 			
 		}
