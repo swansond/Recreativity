@@ -29,6 +29,23 @@ public class PlayActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.play_activity);
+		
+		Button profileButton = (Button) findViewById(R.id.menu_profile);
+		profileButton.setOnClickListener(new Button.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent myIntent = new Intent(PlayActivity.this, ProfileActivity.class);
+		    	PlayActivity.this.startActivity(myIntent);
+		    }
+		});
+		
+		Button exploreButton = (Button) findViewById(R.id.menu_explore);
+		exploreButton.setOnClickListener(new Button.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent myIntent = new Intent(PlayActivity.this, ExploreActivity.class);
+		    	PlayActivity.this.startActivity(myIntent);
+		    }
+		});
+		
 		Intent intent = getIntent();
 		Submission s = null;
 		Bundle b = intent.getExtras();
@@ -64,7 +81,7 @@ public class PlayActivity extends FragmentActivity {
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.prompt_menu, menu);
 		return true;
 	}
 

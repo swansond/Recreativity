@@ -67,6 +67,22 @@ public class ExploreActivity extends Activity {
 		pic9.setOnClickListener(new SubmissionListener(4, 1));
 		View pic8 = findViewById(R.id.imageView8);
 		pic8.setOnClickListener(new SubmissionListener(4, 2));
+		
+		Button playButton = (Button) findViewById(R.id.menu_play);
+		playButton.setOnClickListener(new Button.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent myIntent = new Intent(ExploreActivity.this, PlayActivity.class);
+		    	ExploreActivity.this.startActivity(myIntent);
+		    }
+		});
+		
+		Button profileButton = (Button) findViewById(R.id.menu_profile);
+		playButton.setOnClickListener(new Button.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent myIntent = new Intent(ExploreActivity.this, ProfileActivity.class);
+		    	ExploreActivity.this.startActivity(myIntent);
+		    }
+		});
 	}
 
 	public void goToFlow(int flow, int submission) {
