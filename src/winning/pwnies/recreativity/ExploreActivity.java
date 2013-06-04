@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class ExploreActivity extends Activity {
 	private List<FlowDisplay> views;
@@ -58,31 +59,23 @@ public class ExploreActivity extends Activity {
 		findViewById(R.id.flow6sub4).setOnClickListener(new SubmissionListener(6, 3));
 		findViewById(R.id.flow6sub5).setOnClickListener(new SubmissionListener(6, 4));
 
-		// third flow
-<<<<<<< HEAD
-		View pic7 = findViewById(R.id.imageView7);
-		pic7.setOnClickListener(new SubmissionListener(4, 0));
-		View pic9 = findViewById(R.id.imageView9);
-		pic9.setOnClickListener(new SubmissionListener(4, 1));
-		View pic8 = findViewById(R.id.imageView8);
-		pic8.setOnClickListener(new SubmissionListener(4, 2));
 		
-		Button playButton = (Button) findViewById(R.id.menu_play);
-		playButton.setOnClickListener(new Button.OnClickListener() {
+		LinearLayout playButton = (LinearLayout) findViewById(R.id.menu_play_explore);
+		playButton.setOnClickListener(new LinearLayout.OnClickListener() {
 		    public void onClick(View v) {
 		    	Intent myIntent = new Intent(ExploreActivity.this, PlayActivity.class);
 		    	ExploreActivity.this.startActivity(myIntent);
 		    }
 		});
 		
-		Button profileButton = (Button) findViewById(R.id.menu_profile);
-		playButton.setOnClickListener(new Button.OnClickListener() {
+		LinearLayout profileButton = (LinearLayout) findViewById(R.id.menu_profile_explore);
+		profileButton.setOnClickListener(new LinearLayout.OnClickListener() {
 		    public void onClick(View v) {
 		    	Intent myIntent = new Intent(ExploreActivity.this, ProfileActivity.class);
 		    	ExploreActivity.this.startActivity(myIntent);
 		    }
 		});
-=======
+		
 		findViewById(R.id.flow7sub1).setOnClickListener(new SubmissionListener(7, 0));
 		findViewById(R.id.flow7sub2).setOnClickListener(new SubmissionListener(7, 1));
 		findViewById(R.id.flow7sub3).setOnClickListener(new SubmissionListener(7, 2));
@@ -90,7 +83,7 @@ public class ExploreActivity extends Activity {
 		findViewById(R.id.flow7sub5).setOnClickListener(new SubmissionListener(7, 4));
 		findViewById(R.id.flow7sub6).setOnClickListener(new SubmissionListener(7, 5));
 		findViewById(R.id.flow7sub7).setOnClickListener(new SubmissionListener(7, 6));
-		
+
 		// third flow
 		findViewById(R.id.flow1sub1).setOnClickListener(new SubmissionListener(1, 0));
 		findViewById(R.id.flow1sub2).setOnClickListener(new SubmissionListener(1, 1));
@@ -99,7 +92,6 @@ public class ExploreActivity extends Activity {
 		findViewById(R.id.flow1sub5).setOnClickListener(new SubmissionListener(1, 4));
 		findViewById(R.id.flow1sub6).setOnClickListener(new SubmissionListener(1, 5));
 		findViewById(R.id.flow1sub7).setOnClickListener(new SubmissionListener(1, 6));
->>>>>>> ee8f997c8ed3c16ab24cc6bbfa0e3ecfba5315ae
 	}
 
 	public void goToFlow(int flow, int submission) {
@@ -123,30 +115,6 @@ public class ExploreActivity extends Activity {
 			Log.d("Explore", f.serialNumber() + "");
 			goToFlow(flow, submission);
 		}
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.menu_explore:
-			Data.goToExplore(this);
-			break;
-		case R.id.menu_play:
-			Data.goToPlay(this);
-			break;
-		case R.id.menu_profile:
-			Data.goToProfile(this);
-			break;
-		default:
-			break;
-		}
-		return true;
 	}
 }
 
