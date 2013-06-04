@@ -2,6 +2,7 @@ package winning.pwnies.recreativity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -32,6 +33,8 @@ public class ProfileActivity extends Activity {
 		case R.id.menu_profile:
 			Data.goToProfile(this);
 			break;
+		case android.R.id.home:
+	        return true;
 		default:
 			break;
 		}

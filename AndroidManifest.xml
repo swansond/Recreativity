@@ -25,29 +25,29 @@
         </activity>
         <activity
             android:name="winning.pwnies.recreativity.ViewSubmissionActivity"
-            android:label="@string/app_name"
+            android:label="Explore"
             android:parentActivityName="ExploreActivity" >
         </activity>
         <activity
             android:name="winning.pwnies.recreativity.PlayActivity"
             android:label="@string/app_name"
-            android:parentActivityName="MainActivity" >
+            android:parentActivityName="PlayActivity" >
         </activity>
         <activity
             android:name="winning.pwnies.recreativity.ExploreActivity"
             android:label="@string/app_name"
-            android:parentActivityName="MainActivity"
+            android:parentActivityName="ExploreActivity"
             android:windowSoftInputMode="stateHidden"
              >
         </activity>
         <activity
             android:name="winning.pwnies.recreativity.ProfileActivity"
             android:label="@string/app_name"
-            android:parentActivityName="MainActivity" >
+            android:parentActivityName="ProfileActivity" >
         </activity>
         <activity
             android:name="winning.pwnies.recreativity.SearchResults"
-            android:label="@string/app_name"
+            android:label="Explore"
             android:parentActivityName="ExploreActivity" >
         </activity>
     </application>
