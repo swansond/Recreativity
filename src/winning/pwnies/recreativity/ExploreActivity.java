@@ -59,6 +59,30 @@ public class ExploreActivity extends Activity {
 		findViewById(R.id.flow6sub5).setOnClickListener(new SubmissionListener(6, 4));
 
 		// third flow
+<<<<<<< HEAD
+		View pic7 = findViewById(R.id.imageView7);
+		pic7.setOnClickListener(new SubmissionListener(4, 0));
+		View pic9 = findViewById(R.id.imageView9);
+		pic9.setOnClickListener(new SubmissionListener(4, 1));
+		View pic8 = findViewById(R.id.imageView8);
+		pic8.setOnClickListener(new SubmissionListener(4, 2));
+		
+		Button playButton = (Button) findViewById(R.id.menu_play);
+		playButton.setOnClickListener(new Button.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent myIntent = new Intent(ExploreActivity.this, PlayActivity.class);
+		    	ExploreActivity.this.startActivity(myIntent);
+		    }
+		});
+		
+		Button profileButton = (Button) findViewById(R.id.menu_profile);
+		playButton.setOnClickListener(new Button.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent myIntent = new Intent(ExploreActivity.this, ProfileActivity.class);
+		    	ExploreActivity.this.startActivity(myIntent);
+		    }
+		});
+=======
 		findViewById(R.id.flow7sub1).setOnClickListener(new SubmissionListener(7, 0));
 		findViewById(R.id.flow7sub2).setOnClickListener(new SubmissionListener(7, 1));
 		findViewById(R.id.flow7sub3).setOnClickListener(new SubmissionListener(7, 2));
@@ -75,6 +99,7 @@ public class ExploreActivity extends Activity {
 		findViewById(R.id.flow1sub5).setOnClickListener(new SubmissionListener(1, 4));
 		findViewById(R.id.flow1sub6).setOnClickListener(new SubmissionListener(1, 5));
 		findViewById(R.id.flow1sub7).setOnClickListener(new SubmissionListener(1, 6));
+>>>>>>> ee8f997c8ed3c16ab24cc6bbfa0e3ecfba5315ae
 	}
 
 	public void goToFlow(int flow, int submission) {
