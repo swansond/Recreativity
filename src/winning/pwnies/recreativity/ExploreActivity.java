@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class ExploreActivity extends Activity {
 	private List<FlowDisplay> views;
@@ -59,7 +60,23 @@ public class ExploreActivity extends Activity {
 		findViewById(R.id.flow6sub4).setOnClickListener(new SubmissionListener(6, 3));
 		findViewById(R.id.flow6sub5).setOnClickListener(new SubmissionListener(6, 4));
 
-		// third flow
+		
+		LinearLayout playButton = (LinearLayout) findViewById(R.id.menu_play_explore);
+		playButton.setOnClickListener(new LinearLayout.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent myIntent = new Intent(ExploreActivity.this, PlayActivity.class);
+		    	ExploreActivity.this.startActivity(myIntent);
+		    }
+		});
+		
+		LinearLayout profileButton = (LinearLayout) findViewById(R.id.menu_profile_explore);
+		profileButton.setOnClickListener(new LinearLayout.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent myIntent = new Intent(ExploreActivity.this, ProfileActivity.class);
+		    	ExploreActivity.this.startActivity(myIntent);
+		    }
+		});
+		
 		findViewById(R.id.flow7sub1).setOnClickListener(new SubmissionListener(7, 0));
 		findViewById(R.id.flow7sub2).setOnClickListener(new SubmissionListener(7, 1));
 		findViewById(R.id.flow7sub3).setOnClickListener(new SubmissionListener(7, 2));
@@ -67,7 +84,7 @@ public class ExploreActivity extends Activity {
 		findViewById(R.id.flow7sub5).setOnClickListener(new SubmissionListener(7, 4));
 		findViewById(R.id.flow7sub6).setOnClickListener(new SubmissionListener(7, 5));
 		findViewById(R.id.flow7sub7).setOnClickListener(new SubmissionListener(7, 6));
-		
+
 		// third flow
 		findViewById(R.id.flow1sub1).setOnClickListener(new SubmissionListener(1, 0));
 		findViewById(R.id.flow1sub2).setOnClickListener(new SubmissionListener(1, 1));

@@ -87,7 +87,7 @@ public class TextContent implements Content {
 	        }
 	    }
 	    
-	    while (line.substring(0, 1).equals(" ")) {  // sometimes accidentally starts with a space so delete it
+	    while (line.length() > 0 && line.substring(0, 1).equals(" ")) {  // sometimes accidentally starts with a space so delete it
     		line = line.substring(1);
     	}
 	    canvas.drawText(line, 50+xoffset, 70 + yoffset, p);

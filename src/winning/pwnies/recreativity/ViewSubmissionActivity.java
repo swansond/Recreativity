@@ -27,7 +27,7 @@ public class ViewSubmissionActivity extends FragmentActivity {
 		pagerAdapter = new SubmissionPagerAdapter(getSupportFragmentManager(), Data.getFlow(flowID));
 		pager = (ViewPager) findViewById(R.id.submission_pager);
 		pager.setAdapter(pagerAdapter);
-		pager.setOffscreenPageLimit(5);
+		pager.setOffscreenPageLimit(20);
 		pager.setCurrentItem(submissionNumber);
 		
 	}
