@@ -1,10 +1,9 @@
 package winning.pwnies.recreativity;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import android.app.Activity;
+import android.app.SearchManager;
+import android.app.SearchableInfo;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -12,39 +11,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.SearchView;
 
 public class SearchResults extends Activity {
-	private List<FlowDisplay> views;
-	@SuppressWarnings("unused")
-	private Button viewFlowButton;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Collection<Flow> col = Data.getAllFlows();
-		views = new ArrayList<FlowDisplay>();
-		for (Flow f : col) {
-			views.add(new FlowDisplay(f));
-		}
 		setContentView(R.layout.search_results);
-		int i = 0;
-		for (FlowDisplay f : views) {
-			View itemView = getLayoutInflater().inflate(R.layout.flow_view_layout, (ViewGroup) findViewById(R.id.mama), false);
-			ContentView left = (ContentView) itemView.findViewById(R.id.contentViewLeft);
-			ContentView center = (ContentView) itemView.findViewById(R.id.contentViewMiddle);
-			ContentView right = (ContentView) itemView.findViewById(R.id.contentViewRight);
-			Submission[] out = f.view();
-			if (out[0] != null) {
-				left.setContent(out[0].getContent());
-			}
-			center.setContent(out[1].getContent());
-			if (out[2] != null) {
-				right.setContent(out[2].getContent());
-			}
-			Log.e("counter", Integer.toString(++i));
-		}
+
 		// first flow
 		findViewById(R.id.flow5sub1).setOnClickListener(new SubmissionListener(5, 0));
 		findViewById(R.id.flow5sub2).setOnClickListener(new SubmissionListener(5, 1));
@@ -94,7 +68,13 @@ public class SearchResults extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.search_menu, menu);
+		
+	    SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+	    SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+	    SearchableInfo info = searchManager.getSearchableInfo(getComponentName());
+	    searchView.setSearchableInfo(info);
+	    
 		return true;
 	}
 
