@@ -72,8 +72,6 @@ public class ExploreActivity extends Activity {
 		findViewById(R.id.flow7sub5).setOnClickListener(new SubmissionListener(7, 4));
 		findViewById(R.id.flow7sub6).setOnClickListener(new SubmissionListener(7, 5));
 		findViewById(R.id.flow7sub7).setOnClickListener(new SubmissionListener(7, 6));
-		
-		Log.i("search", "end of onCreate");
 	}
 
 	public void goToFlow(int flow, int submission) {
@@ -109,9 +107,7 @@ public class ExploreActivity extends Activity {
 	    searchView.setSearchableInfo(info);
 	    
 	    Intent intent = getIntent();
-	    Log.i("search", "got intent");
 	    if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-	    	Log.i("search", "setting query and iconified");
 	    	searchView.setIconified(false);
 	    	searchView.setQuery("flower", false);
 	    	searchView.clearFocus();
