@@ -17,54 +17,13 @@ public class ExploreActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.explore_layout);
-		
+		super.onCreate(savedInstanceState);		
 		Intent intent = getIntent();
 	    if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-	    	Intent searchIntent = new Intent(ExploreActivity.this, SearchResults.class);
-	    	ExploreActivity.this.startActivity(searchIntent);
+	    	setContentView(R.layout.search_results);
 	    } else {
-			// first flow
-			findViewById(R.id.flow5sub1).setOnClickListener(new SubmissionListener(5, 0));
-			findViewById(R.id.flow5sub2).setOnClickListener(new SubmissionListener(5, 1));
-			findViewById(R.id.flow5sub3).setOnClickListener(new SubmissionListener(5, 2));
-			findViewById(R.id.flow5sub4).setOnClickListener(new SubmissionListener(5, 3));
-			findViewById(R.id.flow5sub5).setOnClickListener(new SubmissionListener(5, 4));
-	
-			// second flow
-			findViewById(R.id.flow6sub1).setOnClickListener(new SubmissionListener(6, 0));
-			findViewById(R.id.flow6sub2).setOnClickListener(new SubmissionListener(6, 1));
-			findViewById(R.id.flow6sub3).setOnClickListener(new SubmissionListener(6, 2));
-			findViewById(R.id.flow6sub4).setOnClickListener(new SubmissionListener(6, 3));
-			findViewById(R.id.flow6sub5).setOnClickListener(new SubmissionListener(6, 4));
-	
-			
-			LinearLayout playButton = (LinearLayout) findViewById(R.id.menu_play_explore);
-			playButton.setOnClickListener(new LinearLayout.OnClickListener() {
-			    public void onClick(View v) {
-			    	Intent myIntent = new Intent(ExploreActivity.this, PlayActivity.class);
-			    	ExploreActivity.this.startActivity(myIntent);
-			    }
-			});
-			
-			LinearLayout profileButton = (LinearLayout) findViewById(R.id.menu_profile_explore);
-			profileButton.setOnClickListener(new LinearLayout.OnClickListener() {
-			    public void onClick(View v) {
-			    	Intent myIntent = new Intent(ExploreActivity.this, ProfileActivity.class);
-			    	ExploreActivity.this.startActivity(myIntent);
-			    }
-			});
-			
-			// third flow
-			findViewById(R.id.flow7sub1).setOnClickListener(new SubmissionListener(7, 0));
-			findViewById(R.id.flow7sub2).setOnClickListener(new SubmissionListener(7, 1));
-			findViewById(R.id.flow7sub3).setOnClickListener(new SubmissionListener(7, 2));
-			findViewById(R.id.flow7sub4).setOnClickListener(new SubmissionListener(7, 3));
-			findViewById(R.id.flow7sub5).setOnClickListener(new SubmissionListener(7, 4));
-			findViewById(R.id.flow7sub6).setOnClickListener(new SubmissionListener(7, 5));
-			findViewById(R.id.flow7sub7).setOnClickListener(new SubmissionListener(7, 6));
-	
+	    	setContentView(R.layout.explore_layout);
+
 			// fourth flow (default flow from Play)
 			findViewById(R.id.flow1sub1).setOnClickListener(new SubmissionListener(1, 0));
 			findViewById(R.id.flow1sub2).setOnClickListener(new SubmissionListener(1, 1));
@@ -74,6 +33,45 @@ public class ExploreActivity extends Activity {
 			findViewById(R.id.flow1sub6).setOnClickListener(new SubmissionListener(1, 5));
 			findViewById(R.id.flow1sub7).setOnClickListener(new SubmissionListener(1, 6));
 	    }
+
+		LinearLayout playButton = (LinearLayout) findViewById(R.id.menu_play_explore);
+		playButton.setOnClickListener(new LinearLayout.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent myIntent = new Intent(ExploreActivity.this, PlayActivity.class);
+		    	ExploreActivity.this.startActivity(myIntent);
+		    }
+		});
+		
+		LinearLayout profileButton = (LinearLayout) findViewById(R.id.menu_profile_explore);
+		profileButton.setOnClickListener(new LinearLayout.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent myIntent = new Intent(ExploreActivity.this, ProfileActivity.class);
+		    	ExploreActivity.this.startActivity(myIntent);
+		    }
+		});
+	    
+	    // first flow
+		findViewById(R.id.flow5sub1).setOnClickListener(new SubmissionListener(5, 0));
+		findViewById(R.id.flow5sub2).setOnClickListener(new SubmissionListener(5, 1));
+		findViewById(R.id.flow5sub3).setOnClickListener(new SubmissionListener(5, 2));
+		findViewById(R.id.flow5sub4).setOnClickListener(new SubmissionListener(5, 3));
+		findViewById(R.id.flow5sub5).setOnClickListener(new SubmissionListener(5, 4));
+
+		// second flow
+		findViewById(R.id.flow6sub1).setOnClickListener(new SubmissionListener(6, 0));
+		findViewById(R.id.flow6sub2).setOnClickListener(new SubmissionListener(6, 1));
+		findViewById(R.id.flow6sub3).setOnClickListener(new SubmissionListener(6, 2));
+		findViewById(R.id.flow6sub4).setOnClickListener(new SubmissionListener(6, 3));
+		findViewById(R.id.flow6sub5).setOnClickListener(new SubmissionListener(6, 4));
+		
+		// third flow
+		findViewById(R.id.flow7sub1).setOnClickListener(new SubmissionListener(7, 0));
+		findViewById(R.id.flow7sub2).setOnClickListener(new SubmissionListener(7, 1));
+		findViewById(R.id.flow7sub3).setOnClickListener(new SubmissionListener(7, 2));
+		findViewById(R.id.flow7sub4).setOnClickListener(new SubmissionListener(7, 3));
+		findViewById(R.id.flow7sub5).setOnClickListener(new SubmissionListener(7, 4));
+		findViewById(R.id.flow7sub6).setOnClickListener(new SubmissionListener(7, 5));
+		findViewById(R.id.flow7sub7).setOnClickListener(new SubmissionListener(7, 6));
 	}
 
 	public void goToFlow(int flow, int submission) {
