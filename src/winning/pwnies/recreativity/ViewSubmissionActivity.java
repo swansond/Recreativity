@@ -9,8 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class ViewSubmissionActivity extends FragmentActivity {
-	
-	
+
+
 	SubmissionPagerAdapter pagerAdapter;
 	ViewPager pager;
 
@@ -23,40 +23,30 @@ public class ViewSubmissionActivity extends FragmentActivity {
 		Bundle b = intent.getExtras();
 		int flowID = b.getInt(Data.FLOW);
 		int submissionNumber = b.getInt(Data.SUBMISSION);
-		
+
 		pagerAdapter = new SubmissionPagerAdapter(getSupportFragmentManager(), Data.getFlow(flowID));
 		pager = (ViewPager) findViewById(R.id.submission_pager);
 		pager.setAdapter(pagerAdapter);
 		pager.setOffscreenPageLimit(20);
 		pager.setCurrentItem(submissionNumber);
-		
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menu_explore:
-			Data.goToExplore(this);
-			break;
-		case R.id.menu_play:
-			Data.goToPlay(this);
-			break;
-		case R.id.menu_profile:
-			Data.goToProfile(this);
-			break;
 		case android.R.id.home:
-	        NavUtils.navigateUpFromSameTask(this);
-	        return true;
+			NavUtils.navigateUpFromSameTask(this);
+			return true;
 		default:
 			break;
 		}
-//		return true;
+		// return true;
 		return super.onOptionsItemSelected(item);
 	}
 }

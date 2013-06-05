@@ -6,4 +6,5 @@
     <color name="wheat">#F5F5DC</color>
     <color name="black">#80000000</color>
     <color name="dark_grey">#575757</color>
+    <color name="white">#ffffffff</color>
 </resources>
