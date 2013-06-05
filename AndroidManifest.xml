@@ -49,11 +49,6 @@
             android:label="@string/app_name"
             android:parentActivityName="ProfileActivity" >
         </activity>
-        <activity
-            android:name="winning.pwnies.recreativity.SearchResults"
-            android:label="Explore"
-            android:parentActivityName="ExploreActivity" >
-        </activity>
     </application>
 
 </manifest>
