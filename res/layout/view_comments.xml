@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/black" >
+
+        <ImageButton
+            android:id="@+id/starButton_view"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.60"
+            android:contentDescription="@string/starinstructions"
+            android:gravity="bottom"
+            android:onClick="onClick"
+            android:src="@drawable/star_white"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/comment_count"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Comments"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="197dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/comment_list"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/LinearLayout1"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/button1"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="Leave some feedback" >
+
+    </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/LinearLayout1"
+        android:text="Button" />
+
+    <ListView
+        android:id="@+id/comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+    </ListView>
+
+</RelativeLayout>
