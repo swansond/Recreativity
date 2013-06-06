@@ -22,10 +22,6 @@ public class SubmissionFragment extends Fragment {
 		final Submission submission = args.getParcelable(Data.ARG_OBJECT);
 		final LinearLayout casing = (LinearLayout) inflater.inflate(R.layout.content_layout, container, false);
 		
-		cAdapter = new CommentAdapter(casing.getContext(), R.id.comment_list, submission.viewComments());
-	    ((ListView)getActivity().findViewById(R.id.comment_list)).setAdapter(cAdapter);
-	    
-	    drawer = (SlidingDrawer)getActivity().findViewById(R.id.commentPanel);
 		final ImageButton starButton = (ImageButton) casing.findViewById(R.id.starButton);
 		starButton.setImageDrawable(getResources().getDrawable(R.drawable.star1));
 		starButton.setOnClickListener(new View.OnClickListener() {
