@@ -97,19 +97,11 @@ public class PlayActivity extends FragmentActivity {
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		super.onPrepareOptionsMenu(menu);
-		if (composing){
-			
-		}
-	    menu.findItem(R.id.start).setVisible(!isStarted);
-	    menu.findItem(R.id.stop).setVisible(isStarted);
+		menu.findItem(R.id.record_button).setVisible(!composing);
+		menu.findItem(R.id.camera_button).setVisible(!composing);
+		menu.findItem(R.id.write_button).setVisible(!composing);
+		menu.findItem(R.id.submit_button).setVisible(composing);
 	    return true;
-	menu.clear();
-	if(composing){
-		getMenuInflater().inflate(R.menu.compose_menu, menu);
-	} else {
-		getMenuInflater().inflate(R.menu.prompt_menu, menu);
-	}
-	return super.onPrepareOptionsMenu(menu);
 	}
 	
 //	@Override
@@ -184,11 +176,13 @@ public class PlayActivity extends FragmentActivity {
 			int decision = args.getInt(Data.STATUS);
 			final Submission submission = args.getParcelable(Data.ARG_OBJECT);
 			if (decision == Data.PROMPT) {
+				composing = false;
 				LinearLayout casing = (LinearLayout) inflater.inflate(R.layout.prompt_layout, container, false);
 				ContentView content = (ContentView) casing.findViewById(R.id.contentView);
 				content.setContent(submission.getContent(), true);
 				return casing;
 			} else if (decision == Data.COMPOSE) {
+				composing = true;
 				final LinearLayout casing = (LinearLayout) inflater.inflate(R.layout.compose_layout, container, false);
 				Button submit = (Button) casing.findViewById(R.id.submit);
 				submit.setOnClickListener(new Button.OnClickListener() {
