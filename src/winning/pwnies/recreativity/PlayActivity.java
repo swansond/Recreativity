@@ -1,5 +1,7 @@
 package winning.pwnies.recreativity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -23,6 +26,10 @@ public class PlayActivity extends FragmentActivity {
 	PlayAdapter mAdapter;
 
 	ViewPager mPager;
+	
+	AlertDialog.Builder adb;
+	
+	public static boolean composing = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +69,18 @@ public class PlayActivity extends FragmentActivity {
 		mPager.setCurrentItem(0);
 		
 		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN); 
+		
+		adb = new AlertDialog.Builder(this);
+        adb.setTitle("Not implemented yet");
+        adb.setMessage("This functionality is not yet implemented");
+        adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        	public void onClick(DialogInterface dialog, int id) {
+        		dialog.cancel();
+        		}
+        });
 	}
 
-	public void compose(View view) {
+	public void compose() {
 		mPager.setCurrentItem(Data.COMPOSE);
 	}
 	
@@ -79,10 +95,55 @@ public class PlayActivity extends FragmentActivity {
 	}
 	
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onPrepareOptionsMenu(Menu menu) {
+	menu.clear();
+	if(composing){
+		getMenuInflater().inflate(R.menu.compose_menu, menu);
+	} else {
 		getMenuInflater().inflate(R.menu.prompt_menu, menu);
-		return true;
 	}
+	return super.onPrepareOptionsMenu(menu);
+
+	}
+	
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		getMenuInflater().inflate(R.menu.prompt_menu, menu);
+//		return true;
+//	}
+	
+	@Override
+	  public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    case R.id.write_button:
+	    	composing = true;
+	    	compose();
+	      break;
+	    case R.id.record_button:
+	    	adb.show();
+	      break;
+	    case R.id.camera_button:
+	    	adb.show();
+	      break;  
+	    case R.id.submit_button:
+	    	// gets the text the user entered, not sure what to do with it				
+			EditText mEdit   = (EditText)findViewById(R.id.response);
+			String text = mEdit.getText().toString();
+			// TODO make sure not blank submission
+			text = text.replaceAll("\n", " \n ");
+			
+			Data.getFlow(1).addItem(new BasicSubmission(TextContent.createTextContent(text), Data.getUser(1)));
+			Intent intent = new Intent();
+			intent.putExtra(Data.SUBMISSION, Data.getFlow(1).size() - 1);
+			intent.putExtra(Data.FLOW, Data.getFlow(1).serialNumber());
+			startActivity(intent);
+	      break;  
+	    default:
+	      break;
+	    }
+
+	    return true;
+	  } 
 
 	public static class PlayAdapter extends FragmentPagerAdapter {
 		Submission prompt;
@@ -102,6 +163,7 @@ public class PlayActivity extends FragmentActivity {
 			Fragment fragment = new PlayFragment();
 			Bundle args = new Bundle();
 			if (i == Data.PROMPT) {
+				composing = false;
 				args.putParcelable(Data.ARG_OBJECT, prompt);
 			} else if (i == Data.COMPOSE) {
 				// Put stuff here

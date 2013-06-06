@@ -5,10 +5,10 @@
         android:showAsAction="always" />
     
     <item android:id="@+id/camera_button"
-        android:icon="@drawable/draw_icon"
+        android:icon="@drawable/response_type_3"
         android:showAsAction="always" />
     
     <item android:id="@+id/write_button"
-        android:icon="@drawable/response_type_3"
+        android:icon="@drawable/draw_icon"
         android:showAsAction="always" />
 </menu>

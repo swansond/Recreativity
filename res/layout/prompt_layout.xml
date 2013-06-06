@@ -19,12 +19,14 @@
             android:text="Write something inspired \nby this prompt:"
             android:textSize="25sp" />
 
+        <!-- 
         <ImageButton
             android:id="@+id/imageButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_edit"
             android:onClick="compose" />
+         -->
     </LinearLayout>
 
     <winning.pwnies.recreativity.ContentView
