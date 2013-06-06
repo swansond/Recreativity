@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@drawable/black_paper" >"
 
     <LinearLayout
         android:id="@+id/profile_menu"
@@ -13,6 +14,7 @@
 
         <LinearLayout
             android:id="@+id/menu_play_profile"
+            android:background="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.33333333"
@@ -35,6 +37,7 @@
 
         <LinearLayout
             android:id="@+id/menu_profile_profile"
+            android:background="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.33333333"
@@ -57,6 +60,7 @@
 
         <LinearLayout
             android:id="@+id/menu_explore_profile"
+            android:background="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.33333333"
@@ -81,6 +85,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="20dp"
         android:text="Sorry, this feature is not yet implemented! Please click the back button to return to the previous screen."
         android:textSize="25dp" />
 
