@@ -7,6 +7,8 @@ import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 public class ViewSubmissionActivity extends FragmentActivity {
 
@@ -26,6 +28,22 @@ public class ViewSubmissionActivity extends FragmentActivity {
 		pager.setAdapter(pagerAdapter);
 		pager.setOffscreenPageLimit(20);
 		pager.setCurrentItem(submissionNumber);
+		
+		LinearLayout playButton = (LinearLayout) findViewById(R.id.menu_play_explore);
+		playButton.setOnClickListener(new LinearLayout.OnClickListener() {
+			public void onClick(View v) {
+				Intent myIntent = new Intent(ViewSubmissionActivity.this, PlayActivity.class);
+				ViewSubmissionActivity.this.startActivity(myIntent);
+			}
+		});
+
+		LinearLayout profileButton = (LinearLayout) findViewById(R.id.menu_profile_explore);
+		profileButton.setOnClickListener(new LinearLayout.OnClickListener() {
+			public void onClick(View v) {
+				Intent myIntent = new Intent(ViewSubmissionActivity.this, ProfileActivity.class);
+				ViewSubmissionActivity.this.startActivity(myIntent);
+			}
+		});
 	}
 
 	@Override
