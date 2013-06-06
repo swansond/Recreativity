@@ -62,7 +62,6 @@ public class BasicSubmission implements Submission {
 	@Override
 	public void addComment(Comment in) {
 		comments.add(in);
-		Data.addComment(in.serialNumber(), in);
 	}
 
 	/* (non-Javadoc)
