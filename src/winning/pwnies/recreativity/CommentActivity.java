@@ -3,6 +3,7 @@ package winning.pwnies.recreativity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -71,8 +72,17 @@ public class CommentActivity extends Activity {
 				if (!text.isEmpty()) {
 					submission.addComment(BasicComment.newBasicComment(text, Data.getUser(1)));
 					// Reload page
+					Intent intent = new Intent(CommentActivity.this, CommentActivity.class);
+					intent.putExtra(Data.SUBMISSION, submission);
 					finish();
-					startActivity(getIntent());
+					startActivity(intent);
+				} else {
+					int i = 0;
+					Comment c = Data.getComment(++i);
+					while (c != null) {
+						Log.e(c.getAuthor(), c.getText());
+						c = Data.getComment(i++);
+					}
 				}
 			}
 		});

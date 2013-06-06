@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
         // Populate with initial data
         u = DefaultUser.newDefaultUser("You");
         Data.addUser(u.serialNumber(), u);
-		u2 = DefaultUser.newDefaultUser("George W");
+		u2 = DefaultUser.newDefaultUser("Fred Flintstone");
 		Data.addUser(u2.serialNumber(), u2);
 		f = BasicFlow.newBasicFlow();
 		Data.addFlow(f.serialNumber(), f);
@@ -77,14 +77,6 @@ public class MainActivity extends Activity {
 		c8 = TextContent.createTextContent("Morning dew sparkles \n Tiger lilies greet the day \n Summer has arrived");
 		s8 = new BasicSubmission(c8, u);
 		f.addItem(s8);
-		
-		for (Flow f : Data.getAllFlows()) {
-			for (int i = 0; i < f.size(); i++) {
-				Submission s = f.get(i);
-				Comment c = BasicComment.newBasicComment("Submission number: " + i, u3);
-				s.addComment(c);
-			}
-		}
 		Data.goToPlay(this);
         //setContentView(R.layout.activity_main);
     }
