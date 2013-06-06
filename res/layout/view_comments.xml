@@ -84,7 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/explore_menu"
         android:background="@color/black" >
 
         <ImageButton
@@ -122,19 +122,20 @@
         android:hint="Leave some feedback" >
     </EditText>
 
-    <Button
-        android:id="@+id/button1"
+    <ImageButton
+        android:id="@+id/submit_comment"
+        android:background="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editText1"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/LinearLayout1"
-        android:text="Button" />
+        android:layout_below="@+id/LinearLayout1" 
+        android:src="@android:drawable/ic_menu_send" />"
 
     <ListView
         android:id="@+id/comment_list"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true" >
     </ListView>

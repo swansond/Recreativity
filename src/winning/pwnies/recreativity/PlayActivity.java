@@ -131,7 +131,7 @@ public class PlayActivity extends FragmentActivity {
 			text = text.replaceAll("\n", " \n ");
 			
 			Data.getFlow(1).addItem(new BasicSubmission(TextContent.createTextContent(text), Data.getUser(1)));
-			Intent intent = new Intent();
+			Intent intent = new Intent(this, ViewSubmissionActivity.class);
 			intent.putExtra(Data.SUBMISSION, Data.getFlow(1).size() - 1);
 			intent.putExtra(Data.FLOW, Data.getFlow(1).serialNumber());
 			startActivity(intent);
