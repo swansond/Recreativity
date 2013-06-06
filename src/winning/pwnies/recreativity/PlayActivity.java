@@ -96,6 +96,13 @@ public class PlayActivity extends FragmentActivity {
 	
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
+		super.onPrepareOptionsMenu(menu);
+		if (composing){
+			
+		}
+	    menu.findItem(R.id.start).setVisible(!isStarted);
+	    menu.findItem(R.id.stop).setVisible(isStarted);
+	    return true;
 	menu.clear();
 	if(composing){
 		getMenuInflater().inflate(R.menu.compose_menu, menu);
@@ -140,7 +147,6 @@ public class PlayActivity extends FragmentActivity {
 	    default:
 	      break;
 	    }
-
 	    return true;
 	  } 
 
@@ -162,7 +168,6 @@ public class PlayActivity extends FragmentActivity {
 			Fragment fragment = new PlayFragment();
 			Bundle args = new Bundle();
 			if (i == Data.PROMPT) {
-				composing = false;
 				args.putParcelable(Data.ARG_OBJECT, prompt);
 			} else if (i == Data.COMPOSE) {
 				// Put stuff here
