@@ -4,7 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="right"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@drawable/black_paper" >
 
     <LinearLayout
         android:id="@+id/play_menu"
@@ -15,6 +16,7 @@
         
         <LinearLayout
             android:id="@+id/menu_play_explore"
+            android:background="@color/black"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
             android:layout_weight="0.33333333"
@@ -37,6 +39,7 @@
             
 		<LinearLayout
             android:id="@+id/menu_profile_explore"
+            android:background="@color/black"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
             android:layout_weight="0.33333333"
@@ -58,6 +61,7 @@
         
         <LinearLayout
             android:id="@+id/menu_explore_explore"
+            android:background="@color/black"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
             android:layout_weight="0.33333333"
@@ -101,13 +105,12 @@
                 android:id="@+id/flowlistview2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@color/black"
                 android:gravity="center"
                 android:orientation="horizontal" >
 
                 <ImageButton
                     android:id="@+id/flow5sub1"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="3dp"
@@ -120,7 +123,7 @@
 
                 <ImageButton
                     android:id="@+id/flow5sub2"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:scaleType="centerCrop"
@@ -128,7 +131,7 @@
 
                 <ImageButton
                     android:id="@+id/flow5sub3"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="3dp"
@@ -141,7 +144,7 @@
                 
                 <ImageButton
                     android:id="@+id/flow5sub4"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="3dp"
@@ -154,7 +157,7 @@
                 
                 <ImageButton
                     android:id="@+id/flow5sub5"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="3dp"
@@ -177,7 +180,6 @@
                 android:id="@+id/flowlistview3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@color/black"
                 android:gravity="center"
                 android:orientation="horizontal" >
                 
@@ -189,7 +191,7 @@
                 
                 <ImageButton
                     android:id="@+id/flow6sub1"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:scaleType="centerCrop"
@@ -198,7 +200,7 @@
                 
                 <ImageButton
                     android:id="@+id/flow6sub2"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="3dp"
@@ -211,7 +213,7 @@
                                 
                 <ImageButton
                     android:id="@+id/flow6sub3"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="3dp"
@@ -224,7 +226,7 @@
                                 
                 <ImageButton
                     android:id="@+id/flow6sub4"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="3dp"
@@ -237,7 +239,7 @@
                 
                 <ImageButton
                     android:id="@+id/flow6sub5"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="3dp"
@@ -260,20 +262,13 @@
                 android:id="@+id/flowlistview1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@color/black"
                 android:gravity="center"
                 android:onClick="@string/menu_play"
                 android:orientation="horizontal" >
-                
-                <View 
-				    android:layout_width="fill_parent" 
-				    android:layout_height="2dp" 
-				    android:background="@color/light_grey" 
-				    />
 
                 <ImageButton
                     android:id="@+id/flow7sub1"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="3dp"
@@ -286,7 +281,7 @@
                 
                 <ImageButton
                     android:id="@+id/flow7sub2"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="3dp"
@@ -299,7 +294,7 @@
 
                 <ImageButton
                     android:id="@+id/flow7sub3"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:scaleType="centerCrop"
@@ -307,7 +302,7 @@
 
                 <ImageButton
                     android:id="@+id/flow7sub4"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="3dp"
@@ -320,7 +315,7 @@
                 
                 <ImageButton
                     android:id="@+id/flow7sub5"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="3dp"
@@ -333,7 +328,7 @@
                 
                 <ImageButton
                     android:id="@+id/flow7sub6"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="3dp"
@@ -346,7 +341,7 @@
                 
                 <ImageButton
                     android:id="@+id/flow7sub7"
-                    android:background="@color/black"
+                    android:background="@drawable/black_paper"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="3dp"
