@@ -84,7 +84,6 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_below="@id/explore_menu"
         android:background="@color/black" >
 
@@ -135,7 +134,7 @@
     <ListView
         android:id="@+id/comment_list"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true" >
     </ListView>
