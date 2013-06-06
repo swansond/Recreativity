@@ -76,14 +76,7 @@ public class CommentActivity extends Activity {
 					intent.putExtra(Data.SUBMISSION, submission);
 					finish();
 					startActivity(intent);
-				} else {
-					int i = 0;
-					Comment c = Data.getComment(++i);
-					while (c != null) {
-						Log.e(c.getAuthor(), c.getText());
-						c = Data.getComment(i++);
-					}
-				}
+				}			
 			}
 		});
 	}
