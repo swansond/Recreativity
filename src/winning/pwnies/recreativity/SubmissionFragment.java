@@ -9,9 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.SlidingDrawer;
 
-@SuppressWarnings("deprecation")
 public class SubmissionFragment extends Fragment {
 	
 	@Override
@@ -36,10 +34,10 @@ public class SubmissionFragment extends Fragment {
 				}
 			}
 		});
-		if (submission.stars() == 1) {
-			starButton.setImageDrawable(getResources().getDrawable(R.drawable.star2));
-		} else {
+		if (submission.stars() == 0) {
 			starButton.setImageDrawable(getResources().getDrawable(R.drawable.star1));
+		} else {
+			starButton.setImageDrawable(getResources().getDrawable(R.drawable.star2));
 		}
 		Button button = (Button)casing.findViewById(R.id.comment);
 		button.setOnClickListener(new View.OnClickListener() {
