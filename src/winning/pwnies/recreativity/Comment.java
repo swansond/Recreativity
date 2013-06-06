@@ -9,5 +9,17 @@ public interface Comment extends Parcelable {
 	 * @return the serial number for this comment
 	 */
 	public int serialNumber();
+	
+	/**
+	 * Gets the author of this comment
+	 * @return Name of the author
+	 */
+	public String getAuthor();
+	
+	/**
+	 * Gets the text of this comment
+	 * @return The text contained in this comment
+	 */
+	public String getText();
 
 }

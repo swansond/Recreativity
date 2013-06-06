@@ -43,9 +43,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Populate with initial data
-        u = DefaultUser.newDefaultUser();
+        u = DefaultUser.newDefaultUser("You");
         Data.addUser(u.serialNumber(), u);
-		u2 = DefaultUser.newDefaultUser();
+		u2 = DefaultUser.newDefaultUser("George W");
 		Data.addUser(u2.serialNumber(), u2);
 		f = BasicFlow.newBasicFlow();
 		Data.addFlow(f.serialNumber(), f);
@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
 		c2 = TextContent.createTextContent("Haikus aren't funny \n Haikus are overrated \n Refrigerator");
 		s2 = new BasicSubmission(c2, u2);
 		f.addItem(s2);
-		u3 = DefaultUser.newDefaultUser();
+		u3 = DefaultUser.newDefaultUser("Ted M");
 		Data.addUser(u3.serialNumber(), u3);
 		c3 = TextContent.createTextContent("I don't like poetry \n not one bit \n but some times I feel \n like making one fit");
 		s3 = new BasicSubmission(c3, u3);
@@ -78,7 +78,13 @@ public class MainActivity extends Activity {
 		s8 = new BasicSubmission(c8, u);
 		f.addItem(s8);
 		
-		
+		for (Flow f : Data.getAllFlows()) {
+			for (int i = 0; i < f.size(); i++) {
+				Submission s = f.get(i);
+				Comment c = BasicComment.newBasicComment("Submission number: " + i, u3);
+				s.addComment(c);
+			}
+		}
 		Data.goToPlay(this);
         //setContentView(R.layout.activity_main);
     }

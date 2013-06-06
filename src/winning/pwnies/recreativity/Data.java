@@ -23,9 +23,9 @@ public class Data {
 	private static Map<Integer, Content> content = new HashMap<Integer, Content>();
 	
 	static {
-		DefaultUser u = DefaultUser.newDefaultUser();
+		DefaultUser u = DefaultUser.newDefaultUser("Sample User");
 		Data.addUser(u.serialNumber(), u);
-		DefaultUser u2 = DefaultUser.newDefaultUser();
+		DefaultUser u2 = DefaultUser.newDefaultUser("Janette S");
 		Data.addUser(u2.serialNumber(), u2);
 		BasicFlow f = BasicFlow.newBasicFlow();
 		Data.addFlow(f.serialNumber(), f);
@@ -37,7 +37,7 @@ public class Data {
 		TextContent c2 = TextContent.createTextContent("Haikus aren't funny \n Haikus are overrated \n Refrigerator");
 		BasicSubmission s2 = new BasicSubmission(c2, u2);
 		f.addItem(s2);
-		DefaultUser u3 = DefaultUser.newDefaultUser();
+		DefaultUser u3 = DefaultUser.newDefaultUser("David S");
 		Data.addUser(u3.serialNumber(), u3);
 		TextContent c3 = TextContent.createTextContent("I don't like poetry \n not one bit \n but some times I feel \n like making one fit");
 		BasicSubmission s3 = new BasicSubmission(c3, u3);

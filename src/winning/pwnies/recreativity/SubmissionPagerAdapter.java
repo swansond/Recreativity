@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class SubmissionPagerAdapter extends FragmentStatePagerAdapter {
 	
-	private Flow flow;
+	Flow flow;
 
 	public SubmissionPagerAdapter(FragmentManager fm, Flow f) {
 		super(fm);

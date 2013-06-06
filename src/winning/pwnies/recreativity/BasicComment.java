@@ -57,4 +57,14 @@ public class BasicComment implements Comment {
 	public int serialNumber() {
 		return serial;
 	}
+
+	@Override
+	public String getAuthor() {
+		return author.toString();
+	}
+
+	@Override
+	public String getText() {
+		return text;
+	}
 }

@@ -8,14 +8,14 @@
     <winning.pwnies.recreativity.ContentView
         android:id="@+id/contentView"
         android:layout_width="match_parent"
-        android:layout_height="364dp"
-        android:layout_weight="0.62" >
+        android:layout_height="250dp"
+        android:layout_weight="1.00" >
+
     </winning.pwnies.recreativity.ContentView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="0.87"
+        android:layout_height="75dp"
         android:background="@color/black" >
 
         <ImageButton
@@ -29,37 +29,14 @@
             android:src="@drawable/star_white"
             android:visibility="visible" />
 
-        <TextView
-            android:id="@+id/textView1"
+        <Button
+            android:id="@+id/commentToggle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1.00"
-            android:onClick="toggleCommentPanel"
-            android:text="TextView" />
-
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Comments"
+            android:textSize="30sp" />
     </LinearLayout>
-
-    <SlidingDrawer
-        android:id="@+id/slidingDrawer1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.62"
-        android:background="@color/white"
-        android:content="@+id/content"
-        android:handle="@+id/handle" >
-
-        <Button
-            android:id="@+id/handle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Handle" />
-
-        <LinearLayout
-            android:id="@+id/content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-        </LinearLayout>
-    </SlidingDrawer>
 
 </LinearLayout>

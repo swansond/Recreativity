@@ -17,15 +17,17 @@ public class DefaultUser implements User {
 	private List<Submission> submissions;
 	private int receivedStars;
 	private int serial;
+	private String name;
 	
-	public static DefaultUser newDefaultUser() {
-		DefaultUser out = new DefaultUser();
+	public static DefaultUser newDefaultUser(String name) {
+		DefaultUser out = new DefaultUser(name);
 		Data.addUser(out.serial, out);
 		return out;
 	}
 	
-	private DefaultUser() {
+	private DefaultUser(String name) {
 		submissions = new ArrayList<Submission>();
+		this.name = name;
 		serial = currentSerial++;
 	}
 	
@@ -90,5 +92,10 @@ public class DefaultUser implements User {
 			return new DefaultUser[size];
 		}
 	};
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 	
 }
