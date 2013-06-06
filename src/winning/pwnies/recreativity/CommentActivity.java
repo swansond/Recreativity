@@ -68,10 +68,12 @@ public class CommentActivity extends Activity {
 			public void onClick(View v) {
 				// Add comment to submission
 				String text = ((EditText)findViewById(R.id.write_comment)).getText().toString();
-				submission.addComment(BasicComment.newBasicComment(text, Data.getUser(1)));
-				// Reload page
-				finish();
-				startActivity(getIntent());
+				if (!text.isEmpty()) {
+					submission.addComment(BasicComment.newBasicComment(text, Data.getUser(1)));
+					// Reload page
+					finish();
+					startActivity(getIntent());
+				}
 			}
 		});
 	}

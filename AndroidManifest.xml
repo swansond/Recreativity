@@ -55,7 +55,7 @@
         <activity
             android:name="winning.pwnies.recreativity.CommentActivity"
             android:label="@string/app_name"
-            android:parentActivityName="ViewSubmissionActivity"
+            android:parentActivityName="ExploreActivity"
             android:windowSoftInputMode="adjustPan" >
         </activity>
     </application>
