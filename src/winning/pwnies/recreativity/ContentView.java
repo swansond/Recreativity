@@ -34,7 +34,6 @@ public class ContentView extends View {
 	 
 	@Override
 	public void onDraw(Canvas canvas) {
-		canvas.drawARGB(255, 0, 0, 0);
 		if (data != null) {
 			if (isPrompt) {
 				System.out.println("WAS HERE");  // TODO delete
