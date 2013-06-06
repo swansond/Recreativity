@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -58,6 +59,14 @@ public class CommentActivity extends Activity {
 		    	Intent myIntent = new Intent(CommentActivity.this, ProfileActivity.class);
 		    	CommentActivity.this.startActivity(myIntent);
 		    }
+		});
+		
+		ImageButton submitComment = (ImageButton) findViewById(R.id.submit_comment);
+		submitComment.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				
+			}
 		});
 	}
 	
