@@ -9,32 +9,6 @@
         android:id="@+id/response"
         android:layout_width="fill_parent"
         android:layout_height="400dp"
-        android:gravity="top|left" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/backToPrompt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="back"
-            android:text="Back" />
-
-        <Button
-            android:id="@+id/submit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Submit" />
-
-        <Button
-            android:id="@+id/sendToFriend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="unimplemented"
-            android:text="Send to Friend" />
-    </LinearLayout>
-
+        android:gravity="top|left" 
+        android:hint="Write your response here!"/>
 </LinearLayout>
