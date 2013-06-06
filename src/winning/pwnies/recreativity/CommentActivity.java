@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -47,28 +48,33 @@ public class CommentActivity extends Activity {
 		}
 		LinearLayout playButton = (LinearLayout) findViewById(R.id.menu_play_explore);
 		playButton.setOnClickListener(new LinearLayout.OnClickListener() {
-		    public void onClick(View v) {
-		    	Intent myIntent = new Intent(CommentActivity.this, PlayActivity.class);
-		    	CommentActivity.this.startActivity(myIntent);
-		    }
+			public void onClick(View v) {
+				Intent myIntent = new Intent(CommentActivity.this, PlayActivity.class);
+				CommentActivity.this.startActivity(myIntent);
+			}
 		});
-		
+
 		LinearLayout profileButton = (LinearLayout) findViewById(R.id.menu_profile_explore);
 		profileButton.setOnClickListener(new LinearLayout.OnClickListener() {
-		    public void onClick(View v) {
-		    	Intent myIntent = new Intent(CommentActivity.this, ProfileActivity.class);
-		    	CommentActivity.this.startActivity(myIntent);
-		    }
+			public void onClick(View v) {
+				Intent myIntent = new Intent(CommentActivity.this, ProfileActivity.class);
+				CommentActivity.this.startActivity(myIntent);
+			}
 		});
-		
+
 		ImageButton submitComment = (ImageButton) findViewById(R.id.submit_comment);
 		submitComment.setOnClickListener(new OnClickListener() {
 			@Override
-			public void onClick(View arg0) {
-				
+			public void onClick(View v) {
+				// Add comment to submission
+				String text = ((EditText)findViewById(R.id.write_comment)).getText().toString();
+				submission.addComment(BasicComment.newBasicComment(text, Data.getUser(1)));
+				// Reload page
+				finish();
+				startActivity(getIntent());
 			}
 		});
 	}
-	
-	
+
+
 }

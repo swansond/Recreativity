@@ -109,7 +109,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/write_comment"
         android:layout_width="197dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/comment_list"
