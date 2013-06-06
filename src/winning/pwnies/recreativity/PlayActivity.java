@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -78,6 +79,25 @@ public class PlayActivity extends FragmentActivity {
 				dialog.cancel();
 			}
 		});
+		
+		mPager.setOnPageChangeListener(new OnPageChangeListener() {
+		    public void onPageScrollStateChanged(int state) {}
+		    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+		    public void onPageSelected(int position) {
+		    	if (position == Data.PROMPT) {
+		    		composing = false;
+		    	} else if (position == Data.COMPOSE) {
+		    		composing = true;
+		    	}
+		    	resetMenu();
+		    }
+		});
+		
+	}
+	
+	public void resetMenu() {
+		invalidateOptionsMenu();
 	}
 
 	public void compose() {
@@ -97,6 +117,8 @@ public class PlayActivity extends FragmentActivity {
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		super.onPrepareOptionsMenu(menu);
+		menu.clear();
+		getMenuInflater().inflate(R.menu.prompt_menu, menu);
 		menu.findItem(R.id.record_button).setVisible(!composing);
 		menu.findItem(R.id.camera_button).setVisible(!composing);
 		menu.findItem(R.id.write_button).setVisible(!composing);
@@ -104,17 +126,16 @@ public class PlayActivity extends FragmentActivity {
 		return true;
 	}
 
-	//	@Override
-	//	public boolean onCreateOptionsMenu(Menu menu) {
-	//		getMenuInflater().inflate(R.menu.prompt_menu, menu);
-	//		return true;
-	//	}
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.prompt_menu, menu);
+		return true;
+	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.write_button:
-			composing = true;
 			compose();
 			break;
 		case R.id.record_button:
@@ -176,14 +197,11 @@ public class PlayActivity extends FragmentActivity {
 			int decision = args.getInt(Data.STATUS);
 			final Submission submission = args.getParcelable(Data.ARG_OBJECT);
 			if (decision == Data.PROMPT) {
-				composing = false;
 				LinearLayout casing = (LinearLayout) inflater.inflate(R.layout.prompt_layout, container, false);
 				ContentView content = (ContentView) casing.findViewById(R.id.contentView);
 				content.setContent(submission.getContent(), true);
-				getActivity().invalidateOptionsMenu();
 				return casing;
 			} else if (decision == Data.COMPOSE) {
-				composing = true;
 				final LinearLayout casing = (LinearLayout) inflater.inflate(R.layout.compose_layout, container, false);
 				Button submit = (Button) casing.findViewById(R.id.submit);
 				submit.setOnClickListener(new Button.OnClickListener() {
@@ -201,10 +219,8 @@ public class PlayActivity extends FragmentActivity {
 						startActivity(intent);
 					}
 				});
-				getActivity().invalidateOptionsMenu();
 				return casing;
 			} else {
-				getActivity().invalidateOptionsMenu();
 				return inflater.inflate(R.layout.profile_layout, container);
 			}
 		}
