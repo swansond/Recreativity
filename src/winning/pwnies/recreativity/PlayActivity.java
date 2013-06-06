@@ -100,10 +100,9 @@ public class PlayActivity extends FragmentActivity {
 	if(composing){
 		getMenuInflater().inflate(R.menu.compose_menu, menu);
 	} else {
-		getMenuInflater().inflate(R.menu.compose_menu, menu);
+		getMenuInflater().inflate(R.menu.prompt_menu, menu);
 	}
 	return super.onPrepareOptionsMenu(menu);
-
 	}
 	
 //	@Override
