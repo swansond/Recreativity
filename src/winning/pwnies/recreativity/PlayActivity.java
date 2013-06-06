@@ -1,5 +1,7 @@
 package winning.pwnies.recreativity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -23,6 +26,8 @@ public class PlayActivity extends FragmentActivity {
 	PlayAdapter mAdapter;
 
 	ViewPager mPager;
+	
+	AlertDialog.Builder adb;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +67,18 @@ public class PlayActivity extends FragmentActivity {
 		mPager.setCurrentItem(0);
 		
 		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN); 
+		
+		adb = new AlertDialog.Builder(this);
+        adb.setTitle("Not implemented yet");
+        adb.setMessage("This functionality is not yet implemented");
+        adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        	public void onClick(DialogInterface dialog, int id) {
+        		dialog.cancel();
+        		}
+        });
 	}
 
-	public void compose(View view) {
+	public void compose() {
 		mPager.setCurrentItem(Data.COMPOSE);
 	}
 	
@@ -83,6 +97,25 @@ public class PlayActivity extends FragmentActivity {
 		getMenuInflater().inflate(R.menu.prompt_menu, menu);
 		return true;
 	}
+	
+	@Override
+	  public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    case R.id.write_button:
+	    	compose();
+	      break;
+	    case R.id.record_button:
+	    	adb.show();
+	      break;
+	    case R.id.camera_button:
+	    	adb.show();
+	      break;  
+	    default:
+	      break;
+	    }
+
+	    return true;
+	  } 
 
 	public static class PlayAdapter extends FragmentPagerAdapter {
 		Submission prompt;
