@@ -6,7 +6,6 @@ import android.app.SearchableInfo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -91,8 +90,6 @@ public class ExploreActivity extends Activity {
 		}
 
 		public void onClick(View v) {
-			Flow f = Data.getFlow(flow);
-			Log.d("Explore", f.serialNumber() + "");
 			goToFlow(flow, submission);
 		}
 	}

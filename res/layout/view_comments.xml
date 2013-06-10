@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@drawable/black_paper" >
+    android:background="@drawable/black_paper"
+    android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/explore_menu"
@@ -15,10 +15,10 @@
 
         <LinearLayout
             android:id="@+id/menu_play_explore"
-            android:background="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.33333333"
+            android:background="@color/black"
             android:orientation="vertical" >
 
             <TextView
@@ -38,10 +38,10 @@
 
         <LinearLayout
             android:id="@+id/menu_profile_explore"
-            android:background="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.33333333"
+            android:background="@color/black"
             android:orientation="vertical" >
 
             <TextView
@@ -61,10 +61,10 @@
 
         <LinearLayout
             android:id="@+id/menu_explore_explore"
-            android:background="@color/black"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.33333333"
+            android:background="@color/black"
             android:orientation="vertical" >
 
             <TextView
@@ -107,6 +107,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
+            android:onClick="backToSubmission"
             android:text="Comments"
             android:textSize="30sp" />
     </LinearLayout>
@@ -114,33 +115,34 @@
     <RelativeLayout
         android:id="@+id/add_comment"
         android:layout_width="match_parent"
-        android:layout_height="75dp" >
-        
-	    <EditText
-	        android:id="@+id/write_comment"
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:layout_above="@+id/comment_list"
-	        android:layout_alignParentLeft="true"
-	        android:layout_below="@+id/LinearLayout1"
-	        android:layout_marginTop="10dp"
-	        android:layout_toLeftOf="@+id/submit_comment"
-	        android:ems="10"
-	        android:gravity="start"
-	        android:hint="Leave some feedback!" >
-	    </EditText>
-	
-	    <ImageButton
-	        android:id="@+id/submit_comment"
-	        android:background="@drawable/black_paper"
-	        android:layout_width="50dp"
-	        android:layout_height="match_parent"
-	        android:layout_alignBottom="@+id/write_comment"
-	        android:layout_alignParentRight="true"
-	        android:layout_below="@+id/LinearLayout1" 
-	        android:padding="0dp"
-	        android:scaleType="fitCenter"
-	        android:src="@android:drawable/ic_menu_send" />
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/LinearLayout1" >
+
+        <EditText
+            android:id="@+id/write_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/submit_comment"
+            android:ems="10"
+            android:gravity="start"
+            android:hint="Leave some feedback!" >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/submit_comment"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/write_comment"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/black_paper"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_menu_send" />
     </RelativeLayout>
 
     <ListView
@@ -148,7 +150,8 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" >
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/add_comment" >
     </ListView>
 
-</LinearLayout>
+</RelativeLayout>

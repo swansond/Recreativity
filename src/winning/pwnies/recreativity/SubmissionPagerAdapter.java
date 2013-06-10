@@ -20,7 +20,8 @@ public class SubmissionPagerAdapter extends FragmentStatePagerAdapter {
 	public Fragment getItem(int i) {
 		Fragment fragment = new SubmissionFragment();
 		Bundle args = new Bundle();
-		args.putParcelable(Data.ARG_OBJECT, flow.get(i));
+		args.putInt(Data.SUBMISSION, i);
+		args.putInt(Data.FLOW, flow.serialNumber());
 		fragment.setArguments(args);
 		return fragment;
 	}

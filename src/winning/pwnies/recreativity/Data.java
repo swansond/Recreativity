@@ -97,6 +97,39 @@ public class Data {
 		addImageToFlow(f7, u2, R.drawable.flow7sub5);
 		addImageToFlow(f7, u, R.drawable.flow7sub6);
 		addImageToFlow(f7, u, R.drawable.flow7sub7);
+		
+		User test1 = DefaultUser.newDefaultUser("Angela");
+		User test2 = DefaultUser.newDefaultUser("Alex");
+		User test3 = DefaultUser.newDefaultUser("Shahaf");
+		
+		User[] users = {test1, test2, test3};
+		String[] options = {
+				"This really speaks to me",
+				"This reminds me of a book I read last week",
+				"There are few things I have ever seen that stand out like this does",
+				"Dude, this is awesome!",
+				"I love it!",
+				"This looks like something my daughter brought home from kindergarten!",
+				"Beautful!",
+				"This is fantastic!",
+				"This is really cool!",
+				"Wow!",
+				"Amazing!",
+				"Great way to develop the idea!"
+		};
+		for (Flow flow : Data.getAllFlows()) {
+			for (int i = 0; i < flow.size(); i++) {
+				Submission sub = flow.get(i);
+				int nextUser = (int) (Math.random() * users.length);
+				int change = Math.random() < .5 ? -1 : 1;
+				for (int j = 0; j < Math.random() * 3; j++) {
+					sub.addComment(
+							BasicComment.newBasicComment(
+									options[(int) (Math.random() * options.length)], 
+									users[((nextUser += change) + 3 ) % users.length]));
+				}
+			}
+		}
 	}
 	
 	public static void addFlow(int serial, Flow flow) {
