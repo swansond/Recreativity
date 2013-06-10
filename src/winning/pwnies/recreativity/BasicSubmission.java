@@ -71,9 +71,11 @@ public class BasicSubmission implements Submission {
 	public void toggleStar(User name) {
 		if (!starred.add(name)) {
 			name.removeStar();
+			stars--;
 			starred.remove(name);
 		} else {
 			name.addStar();
+			stars++;
 		}
 	}
 

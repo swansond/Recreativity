@@ -20,17 +20,13 @@ public class SubmissionFragment extends Fragment {
 		final ImageButton starButton = (ImageButton) casing.findViewById(R.id.starButton);
 		starButton.setImageDrawable(getResources().getDrawable(R.drawable.star1));
 		starButton.setOnClickListener(new View.OnClickListener() {
-			boolean starred = true;
-
 			@Override
 			public void onClick(View v) {
 				submission.toggleStar(Data.getUser(1));
-				if (starred) {					
-					starButton.setImageDrawable(getResources().getDrawable(R.drawable.star2));
-					starred = false;
-				} else {
+				if (submission.stars() == 0) {			
 					starButton.setImageDrawable(getResources().getDrawable(R.drawable.star1));
-					starred = true;
+				} else {
+					starButton.setImageDrawable(getResources().getDrawable(R.drawable.star2));
 				}
 			}
 		});

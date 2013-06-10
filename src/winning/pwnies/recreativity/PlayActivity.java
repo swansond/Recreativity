@@ -17,7 +17,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -79,23 +78,30 @@ public class PlayActivity extends FragmentActivity {
 				dialog.cancel();
 			}
 		});
-		
-		mPager.setOnPageChangeListener(new OnPageChangeListener() {
-		    public void onPageScrollStateChanged(int state) {}
-		    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
 
-		    public void onPageSelected(int position) {
-		    	if (position == Data.PROMPT) {
-		    		composing = false;
-		    	} else if (position == Data.COMPOSE) {
-		    		composing = true;
-		    	}
-		    	resetMenu();
-		    }
+		mPager.setOnPageChangeListener(new OnPageChangeListener() {
+			public void onPageScrollStateChanged(int state) {}
+			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+			public void onPageSelected(int position) {
+				if (position == Data.PROMPT) {
+					composing = false;
+				} else if (position == Data.COMPOSE) {
+					composing = true;
+				}
+				resetMenu();
+			}
 		});
-		
+
 	}
 	
+	@Override
+	public void onResume() {
+		super.onResume();
+		composing = false;
+		resetMenu();
+	}
+
 	public void resetMenu() {
 		invalidateOptionsMenu();
 	}
@@ -148,14 +154,14 @@ public class PlayActivity extends FragmentActivity {
 			// gets the text the user entered, not sure what to do with it				
 			EditText mEdit   = (EditText)findViewById(R.id.response);
 			String text = mEdit.getText().toString();
-			// TODO make sure not blank submission
 			text = text.replaceAll("\n", " \n ");
-
-			Data.getFlow(1).addItem(new BasicSubmission(TextContent.createTextContent(text), Data.getUser(1)));
-			Intent intent = new Intent(this, ViewSubmissionActivity.class);
-			intent.putExtra(Data.SUBMISSION, Data.getFlow(1).size() - 1);
-			intent.putExtra(Data.FLOW, Data.getFlow(1).serialNumber());
-			startActivity(intent);
+			if (!text.isEmpty()) {
+				Data.getFlow(1).addItem(new BasicSubmission(TextContent.createTextContent(text), Data.getUser(1)));
+				Intent intent = new Intent(this, ViewSubmissionActivity.class);
+				intent.putExtra(Data.SUBMISSION, Data.getFlow(1).size() - 1);
+				intent.putExtra(Data.FLOW, Data.getFlow(1).serialNumber());
+				startActivity(intent);
+			}
 			break;  
 		default:
 			break;
@@ -182,8 +188,6 @@ public class PlayActivity extends FragmentActivity {
 			Bundle args = new Bundle();
 			if (i == Data.PROMPT) {
 				args.putParcelable(Data.ARG_OBJECT, prompt);
-			} else if (i == Data.COMPOSE) {
-				// Put stuff here
 			}
 			args.putInt(Data.STATUS, i);
 			fragment.setArguments(args);
